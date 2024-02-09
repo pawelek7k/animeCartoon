@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'header';
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   padding: 0;
@@ -8,7 +9,7 @@
 }
 
 body {
-  font-family: $fonts;
+  font-family: $main-font;
   background-color: $primary-color;
 
   //   min-height: 100vh;
@@ -26,7 +27,20 @@ li {
 header {
   @include header-styles();
   padding: $padding-spacing;
-  border: $border;
+  border-bottom: $border;
+  font-family: $font;
+  font-size: $font-size;
+}
+
+header a {
+  color: $dark-black;
+  transition: $transition;
+}
+
+header a:hover {
+  background: linear-gradient(to right, #ff0000, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .navigation-list {
@@ -37,4 +51,20 @@ header {
 .logo-header {
   @include flex-center();
   gap: 1rem;
+  background: linear-gradient(to right, #ff0000, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  border: $border;
+  @include border-radius($spacing);
+  padding: $input-padding;
+  font-family: $font;
+  background: linear-gradient(to right, #e20404, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
 }
