@@ -11,7 +11,6 @@
 body {
   font-family: $main-font;
   background-color: $primary-color;
-
   //   min-height: 100vh;
   //   @include flex-center();
 }
@@ -22,49 +21,4 @@ a {
 
 li {
   list-style: none;
-}
-
-header {
-  @include header-styles();
-  padding: $padding-spacing;
-  border-bottom: $border;
-  font-family: $font;
-  font-size: $font-size;
-}
-
-header a {
-  color: $dark-black;
-  transition: $transition;
-}
-
-header a:hover {
-  background: linear-gradient(to right, #ff0000, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.navigation-list {
-  @include header-styles();
-  gap: $spacing;
-}
-
-.logo-header {
-  @include flex-center();
-  gap: 1rem;
-  background: linear-gradient(to right, #ff0000, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.search-input {
-  border: none;
-  outline: none;
-  border: $border;
-  @include border-radius($spacing);
-  padding: $input-padding;
-  font-family: $font;
-  background: linear-gradient(to right, #e20404, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
 }
