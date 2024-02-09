@@ -30,6 +30,16 @@ header a:hover {
   -webkit-text-fill-color: transparent;
 }
 
+.icon-search {
+  position: absolute;
+  top: 25%;
+  left: 7%;
+}
+
+.input-div {
+  position: relative;
+}
+
 .search-input {
   border: none;
   outline: none;
@@ -40,5 +50,4 @@ header a:hover {
   background: linear-gradient(to right, #e20404, #000000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
 }
