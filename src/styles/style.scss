@@ -10,11 +10,31 @@
 body {
   font-family: $fonts;
   background-color: $primary-color;
-  padding: $spacing;
+
   //   min-height: 100vh;
   //   @include flex-center();
 }
 
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 header {
   @include header-styles();
+  padding: $padding-spacing;
+  border: $border;
+}
+
+.navigation-list {
+  @include header-styles();
+  gap: $spacing;
+}
+
+.logo-header {
+  @include flex-center();
+  gap: 1rem;
 }
