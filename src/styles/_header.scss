@@ -4,6 +4,17 @@ header {
   border-bottom: $border;
   font-family: $font;
   font-size: $font-size;
+  position: fixed;
+  background-color: $primary-color;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.header {
   position: relative;
 }
 
