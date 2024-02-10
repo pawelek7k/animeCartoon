@@ -4,6 +4,7 @@ header {
   border-bottom: $border;
   font-family: $font;
   font-size: $font-size;
+  position: relative;
 }
 
 header a {
@@ -20,6 +21,9 @@ header a:hover {
 .navigation-list {
   @include header-styles();
   gap: $spacing;
+  @media (max-width: 800px) {
+    display: none;
+  }
 }
 
 .logo-header {
@@ -36,6 +40,20 @@ header a:hover {
   left: 7%;
 }
 
+.menu-svg-header {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  @media (max-width: 800px) {
+    display: block;
+    justify-content: end;
+  }
+}
+
 .input-div {
   position: relative;
   border: none;
@@ -44,6 +62,9 @@ header a:hover {
   @include border-radius($spacing);
   padding: $input-padding;
   background-color: white;
+  @media (max-width: 650px) {
+    display: none;
+  }
 }
 
 .search-input {

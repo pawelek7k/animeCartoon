@@ -8,6 +8,7 @@ header {
   border-bottom: 1px solid rgb(227, 223, 223);
   font-family: "Protest Revolution", sans-serif;
   font-size: 1.2rem;
+  position: relative;
 }
 
 header a {
@@ -27,6 +28,11 @@ header a:hover {
   align-items: center;
   gap: 2rem;
 }
+@media (max-width: 800px) {
+  .navigation-list {
+    display: none;
+  }
+}
 
 .logo-header {
   display: flex;
@@ -44,6 +50,22 @@ header a:hover {
   left: 7%;
 }
 
+.menu-svg-header {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  right: 10%;
+}
+@media (max-width: 800px) {
+  .menu-svg-header {
+    display: block;
+    justify-content: end;
+  }
+}
+
 .input-div {
   position: relative;
   border: none;
@@ -54,6 +76,11 @@ header a:hover {
   border-radius: 2rem;
   padding: 0.5rem 2rem 0.5rem 2.5rem;
   background-color: white;
+}
+@media (max-width: 650px) {
+  .input-div {
+    display: none;
+  }
 }
 
 .search-input {
@@ -72,6 +99,18 @@ header a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 400px) {
+  .first-hero-content h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .first-hero-content {
   display: flex;
@@ -79,9 +118,23 @@ header a:hover {
   gap: 1rem;
   max-width: 50%;
 }
+@media (max-width: 650px) {
+  .first-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+  }
+}
 
 .first-hero-content p {
   font-weight: 600;
+}
+@media (max-width: 400px) {
+  .first-hero-content p {
+    font-weight: 500;
+  }
 }
 
 .button-hero {
@@ -97,6 +150,14 @@ header a:hover {
   width: 40%;
   margin-top: 1rem;
   text-align: center;
+}
+@media (max-width: 800px) {
+  .button-hero {
+    width: auto;
+    text-wrap: nowrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
 }
 
 .button-hero:hover {

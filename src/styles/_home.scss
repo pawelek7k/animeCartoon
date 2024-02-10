@@ -4,16 +4,33 @@
   background: linear-gradient(to right, #b50404, #000000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  @media (max-width: 400px) {
+    font-size: $responsive-header-size;
+  }
+}
+
+.hero-container {
+  @media (max-width: 650px) {
+    @include colum-styles();
+  }
 }
 
 .first-hero-content {
   @include colum-styles;
   gap: $primary-gap;
   max-width: 50%;
+  @media (max-width: 650px) {
+    @include flex-center();
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 .first-hero-content p {
   font-weight: 600;
+  @media (max-width: 400px) {
+    font-weight: 500;
+  }
 }
 
 .button-hero {
@@ -29,6 +46,12 @@
   width: 40%;
   margin-top: 1rem;
   text-align: center;
+  @media (max-width: 800px) {
+    width: auto;
+    text-wrap: nowrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
 }
 
 .button-hero:hover {
