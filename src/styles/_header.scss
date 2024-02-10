@@ -32,20 +32,23 @@ header a:hover {
 
 .icon-search {
   position: absolute;
-  top: 25%;
+  top: 0.8rem;
   left: 7%;
 }
 
 .input-div {
   position: relative;
-}
-
-.search-input {
   border: none;
   outline: none;
   border: $border;
   @include border-radius($spacing);
   padding: $input-padding;
+  background-color: white;
+}
+
+.search-input {
+  border: none;
+  outline: none;
   font-family: $font;
   background: linear-gradient(to right, #e20404, #000000);
   -webkit-background-clip: text;
