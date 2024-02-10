@@ -1,0 +1,32 @@
+export const galleryItems = [
+  {
+    icon: '../images/eren.jpg',
+    mainCharacter: 'Eren Jeager',
+    alt: 'On the picture, there is a young boy with long brown hair and green eyes.',
+    title: 'Attack on Titan',
+    seasons: 4,
+    favorite: false,
+    rating: 4.5,
+    tags: ['horror', 'fantasy', 'action'],
+  },
+  {
+    icon: '../images/makima.jpg.jpg',
+    mainCharacter: 'Denji',
+    alt: 'On the picture, there is a woman with long pink hair. She is wearing a suit.',
+    title: 'Chainsaw Man',
+    seasons: 1,
+    favorite: false,
+    rating: 4,
+    tags: ['horror', 'fantasy', 'action', 'supernatural', 'mystery'],
+  },
+  {
+    icon: '../images/kakegurui-girl.jpg.jpg',
+    mainCharacter: 'Jabami Yumeko',
+    alt: 'On the picture, there is a young, happy gitl with long black hair and red, hot eyes.',
+    title: 'Attack on Titan',
+    seasons: 4,
+    favorite: false,
+    rating: 3.5,
+    tags: ['school', 'ecchi', 'psychological', 'hazard'],
+  },
+];

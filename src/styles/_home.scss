@@ -11,6 +11,8 @@
 
 .hero-container {
   margin-top: 5rem;
+  display: flex;
+  gap: $primary-gap;
   @media (max-width: 650px) {
     @include colum-styles();
   }
@@ -19,10 +21,10 @@
 .first-hero-content {
   @include colum-styles;
   gap: $primary-gap;
-  max-width: 50%;
+  width: 50%;
   @media (max-width: 650px) {
     @include flex-center();
-    max-width: 100%;
+    width: 100%;
     text-align: center;
   }
 }
@@ -144,5 +146,25 @@
   }
   100% {
     bottom: 100%;
+  }
+}
+
+.second-hero-content {
+  width: 50%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle,
+      rgba(40, 0, 0, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 1) 50%
+    ),
+    url('../images/anime-bc1.webp');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  @media (max-width: 650px) {
+    @include flex-center();
+    width: 100%;
+    text-align: center;
   }
 }
