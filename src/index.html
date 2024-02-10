@@ -7,6 +7,7 @@
   <title>Page title</title>
   <link rel="stylesheet" href="styles/style.css">
   <script src="animation.js" defer></script>
+  <script src="script.js" defer></script>
 
 </head>
 
@@ -24,18 +25,25 @@
 
       <input type="text" placeholder="search" class="search-input" name="search">
     </div>
-    <button type="menu" class="menu-svg-header">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-        <path fill="none" d="M0 0h24v24H0V0z" />
-        <path
-          d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z" />
-      </svg>
-    </button>
+    <div class="menu-svg-header">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
     <nav>
       <ul class="navigation-list">
-        <li><a href="">Home</a></li>
-        <li><a href="">Genres</a></li>
-        <li><a href="">Reviews</a></li>
+        <li>
+          <hr class="hr-nav-hamb"><a href="">Home</a>
+          <hr class="hr-nav-hamb">
+        </li>
+        <li>
+          <hr class="hr-nav-hamb"><a href="">Genres</a>
+          <hr class="hr-nav-hamb">
+        </li>
+        <li>
+          <hr class="hr-nav-hamb"><a href="">Reviews</a>
+          <hr class="hr-nav-hamb">
+        </li>
       </ul>
     </nav>
   </header>

@@ -1,0 +1,13 @@
+// hambvurger
+
+const hamburgerHtml = document.querySelector('.menu-svg-header');
+const navMenuHtml = document.querySelector('.navigation-list');
+
+hamburgerHtml.addEventListener('click', () => {
+  hamburgerHtml.classList.toggle('active');
+  navMenuHtml.classList.toggle('active');
+});
+
+document.querySelectorAll;
+
+// end of hamburger

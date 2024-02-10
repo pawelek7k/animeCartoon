@@ -22,8 +22,30 @@ header a:hover {
   @include header-styles();
   gap: $spacing;
   @media (max-width: 800px) {
-    display: none;
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    background-color: $primary-color;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 999;
+    @include colum-styles();
+    padding: $padding-spacing;
   }
+}
+
+.hr-nav-hamb {
+  display: none;
+  @media (max-width: 800px) {
+    display: block;
+    transform: rotate(90deg);
+  }
+}
+
+.navigation-list li {
+  display: flex;
+  gap: $primary-gap;
 }
 
 .logo-header {
@@ -50,8 +72,31 @@ header a:hover {
   right: 10%;
   @media (max-width: 800px) {
     display: block;
-    justify-content: end;
   }
+}
+
+.bar {
+  display: block;
+  background-color: #000000;
+  width: 25px;
+  height: 3px;
+  -webkit-transtition: all 0.3s easy-in-out;
+  transition: all 0.3s easy-in-out;
+  margin-bottom: 5px;
+}
+
+.menu-svg-header.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-svg-header.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-svg-header.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navigation-list.active {
+  left: 0;
 }
 
 .input-div {
