@@ -15,6 +15,7 @@
   gap: $primary-gap;
   @media (max-width: 650px) {
     @include colum-styles();
+    padding: 0rem 2rem;
   }
 }
 
@@ -166,5 +167,11 @@
     @include flex-center();
     width: 100%;
     text-align: center;
+  }
+}
+
+.second-hero-content img {
+  @media (max-width: 650px) {
+    width: 150px;
   }
 }

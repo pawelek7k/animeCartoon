@@ -175,6 +175,7 @@ header a:hover {
   .hero-container {
     display: flex;
     flex-direction: column;
+    padding: 0rem 2rem;
   }
 }
 
@@ -329,6 +330,12 @@ header a:hover {
     justify-content: center;
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .second-hero-content img {
+    width: 150px;
   }
 }
 
