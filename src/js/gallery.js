@@ -6,7 +6,7 @@ const galleryItem = galleryItems
     item =>
       `<li class="gallery_item">
   <a class="gallery_link" href="#">
-  <img class="gallery_image" src="${item.icon}" alt="${item.alt}"/>
+  <img class="gallery_image" src="${item.icon}" alt="${item.alt}" width="50"/>
   </a>
   </li>`
   )

@@ -1,6 +1,6 @@
 export const galleryItems = [
   {
-    icon: '../images/eren.jpg',
+    icon: './images/eren.jpg',
     mainCharacter: 'Eren Jeager',
     alt: 'On the picture, there is a young boy with long brown hair and green eyes.',
     title: 'Attack on Titan',
@@ -10,7 +10,7 @@ export const galleryItems = [
     tags: ['horror', 'fantasy', 'action'],
   },
   {
-    icon: '../images/makima.jpg.jpg',
+    icon: './images/makima.jpg',
     mainCharacter: 'Denji',
     alt: 'On the picture, there is a woman with long pink hair. She is wearing a suit.',
     title: 'Chainsaw Man',
@@ -20,7 +20,7 @@ export const galleryItems = [
     tags: ['horror', 'fantasy', 'action', 'supernatural', 'mystery'],
   },
   {
-    icon: '../images/kakegurui-girl.jpg.jpg',
+    icon: ' ./images/kakegurui-girl.jpg',
     mainCharacter: 'Jabami Yumeko',
     alt: 'On the picture, there is a young, happy gitl with long black hair and red, hot eyes.',
     title: 'Attack on Titan',
