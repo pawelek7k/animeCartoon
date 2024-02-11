@@ -29,6 +29,9 @@ li {
   padding: $sections-padding;
   // max-width: 1600px;
   @include flex-center;
+  @media (max-width: 640px) {
+    padding: 2rem 0.1rem;
+  }
 }
 
 .hidden {

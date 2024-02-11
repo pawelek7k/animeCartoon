@@ -364,6 +364,11 @@ li {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 640px) {
+  .section {
+    padding: 2rem 0.1rem;
+  }
+}
 
 .hidden {
   opacity: 0;
