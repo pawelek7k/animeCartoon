@@ -14,11 +14,49 @@
 
 @mixin header-styles {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 @mixin colum-styles {
   display: flex;
   flex-direction: column;
+}
+
+@mixin color-text {
+  background: linear-gradient(to right, #b50404, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: $font;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin headers {
+  text-align: center;
+  font-family: $font;
+  letter-spacing: 4px;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+@mixin form-styles {
+  @include flex-center;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 100px auto;
+  padding: 3rem;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  border-radius: $spacing;
+}
+
+@mixin input-styles {
+  width: 100%;
+  padding: 10px;
+  border: $border;
+  border-radius: $spacing;
+  outline: none;
+  margin-bottom: 15px;
 }

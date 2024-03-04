@@ -1,342 +1,234 @@
 /* $radius is the parameter of the function */
 @import url("https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
-  border-bottom: 1px solid rgb(227, 223, 223);
-  font-family: "Protest Revolution", sans-serif;
-  font-size: 1.2rem;
+.nav-bar {
+  width: 7rem;
+  height: 100vh;
   position: fixed;
-  background-color: #ffffff;
-  opacity: 0.9;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.605);
+  backdrop-filter: blur(5px);
+  border-right: 1px solid rgb(159, 125, 125);
+  padding: 1rem;
+  transition: width 200ms ease;
+}
+@media only screen and (max-width: 600px) {
+  .nav-bar {
+    bottom: 0;
+    width: 100vw;
+    height: 7rem;
+    border: none;
+    border-top: 1px solid rgb(159, 125, 125);
+  }
 }
 
-.header {
-  position: relative;
+.logo-img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .logo-img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 }
 
-header a {
-  color: black;
-  transition: 250ms cubic-bezier(0.77, 0, 0.175, 1);
+.nav-bar:hover {
+  width: 20rem;
 }
 
-header a:hover {
-  background: linear-gradient(to right, #ff0000, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.navigation-list {
+.navbar-nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  flex-direction: column;
 }
-@media (max-width: 800px) {
-  .navigation-list {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    background-color: #ffffff;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    z-index: 999;
+@media only screen and (max-width: 600px) {
+  .navbar-nav {
     display: flex;
-    flex-direction: column;
-    padding: 1rem 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 
-.hr-nav-hamb {
-  display: none;
+.nav-item:last-child {
+  border: 1px solid rgb(159, 125, 125);
+  border-radius: 2rem;
 }
-@media (max-width: 800px) {
-  .hr-nav-hamb {
-    display: block;
-    transform: rotate(90deg);
+@media only screen and (max-width: 600px) {
+  .nav-item:last-child {
+    border: none;
   }
 }
 
-.navigation-list li {
-  display: flex;
-  gap: 1rem;
-}
-
-.logo-header {
+.nav-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  background: linear-gradient(to right, #ff0000, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  height: 5rem;
+  color: rgba(0, 0, 0, 0.762);
+  font-family: "Protest Revolution", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
 }
 
-.icon-search {
-  position: absolute;
-  top: 0.8rem;
-  left: 7%;
-}
-
-.menu-svg-header {
+.link-text {
   display: none;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  position: absolute;
-  top: 35%;
-  right: 10%;
-}
-@media (max-width: 800px) {
-  .menu-svg-header {
-    display: block;
-  }
 }
 
-.bar {
+.nav-bar:hover .link-text {
   display: block;
-  background-color: #000000;
-  width: 25px;
-  height: 3px;
-  -webkit-transtition: all 0.3s easy-in-out;
-  transition: all 0.3s easy-in-out;
-  margin-bottom: 5px;
 }
 
-.menu-svg-header.active .bar:nth-child(2) {
-  opacity: 0;
+.nav-bar:hover .icon-menu-navbar {
+  margin-right: 0.5rem;
 }
 
-.menu-svg-header.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.menu-svg-header.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-.navigation-list.active {
-  left: 0;
-}
-
-.input-div {
-  position: relative;
-  border: none;
-  outline: none;
-  border: 1px solid rgb(227, 223, 223);
-  -webkit-border-radius: 2rem;
-  -moz-border-radius: 2rem;
-  border-radius: 2rem;
-  padding: 0.5rem 2rem 0.5rem 2.5rem;
-  background-color: white;
-}
-@media (max-width: 650px) {
-  .input-div {
+@media only screen and (max-width: 600px) {
+  .nav-bar:hover {
+    bottom: 0;
+    width: 100vw;
+    height: 7rem;
+  }
+  .nav-bar:hover .link-text {
     display: none;
   }
 }
-
-.search-input {
-  border: none;
-  outline: none;
-  font-family: "Protest Revolution", sans-serif;
-  background: linear-gradient(to right, #e20404, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.log-in-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 100px auto;
+  padding: 3rem;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  border-radius: 2rem;
 }
 
-.first-hero-content h1 {
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 100px auto;
+  padding: 3rem;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  border-radius: 2rem;
+}
+
+.h1-login {
+  text-align: center;
+  font-family: "Protest Revolution", sans-serif;
+  letter-spacing: 4px;
+  font-weight: 800;
+  font-size: 3rem;
+  background: linear-gradient(to right, #b50404, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Protest Revolution", sans-serif;
+  letter-spacing: 2px;
+}
+@media only screen and (max-width: 600px) {
+  .h1-login {
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+}
+
+.h2-login {
   font-family: "Protest Revolution", sans-serif;
   letter-spacing: 2px;
   background: linear-gradient(to right, #b50404, #000000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-@media (max-width: 400px) {
-  .first-hero-content h1 {
-    font-size: 1.5rem;
-  }
+  font-family: "Protest Revolution", sans-serif;
+  letter-spacing: 2px;
+  margin-top: 2rem;
 }
 
-.hero-container {
-  margin-top: 5rem;
-  display: flex;
-  gap: 1rem;
-}
-@media (max-width: 650px) {
-  .hero-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0rem 2rem;
-  }
+.log-in-main-content {
+  padding: 0 20px;
 }
 
-.first-hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 50%;
-}
-@media (max-width: 650px) {
-  .first-hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-  }
+.log-in-main-content label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: "Protest Revolution", sans-serif;
+  letter-spacing: 2px;
 }
 
-.first-hero-content p {
+.log-in-main-content input[type=text],
+.log-in-main-content input[type=password],
+.log-in-main-content input[type=email] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(159, 125, 125);
+  border-radius: 2rem;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.log-in-main-content input[type=submit] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 2rem;
+  background: linear-gradient(to right, #b50404, #000000);
+  font-family: "Protest Revolution", sans-serif;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin: 2rem 0px 2rem 0px;
+  cursor: pointer;
+  transition: 250ms cubic-bezier(0.77, 0, 0.175, 1);
   font-weight: 600;
 }
-@media (max-width: 400px) {
-  .first-hero-content p {
-    font-weight: 500;
-  }
+
+.log-in-main-content input[type=submit]:hover {
+  background: linear-gradient(to right, #000000, #b50404, #000000);
+  background-size: 200% auto;
+  background-position: left center;
+  animation: gradient-animation 1s linear infinite;
 }
 
-.button-hero {
-  position: relative;
-  display: inline-block;
-  padding: 25px 30px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #000000;
-  font-size: 1.2rem;
-  transition: 0.5s;
-  overflow: hidden;
-  width: 40%;
-  margin-top: 1rem;
+@keyframes gradient-animation {
+  0% {
+    background-position: right center;
+  }
+  100% {
+    background-position: left center;
+  }
+}
+.log-in-main-content input {
+  outline: 1px solid black;
+}
+
+.log-in-main-content input[type=submit]:hover {
+  background-color: black;
+}
+
+.link-singup {
+  font-family: "Protest Revolution", sans-serif;
+  justify-self: flex-end;
+  font-size: 0.9rem;
+  background: linear-gradient(to right, #b50404, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Protest Revolution", sans-serif;
+  letter-spacing: 2px;
   text-align: center;
-}
-@media (max-width: 800px) {
-  .button-hero {
-    width: auto;
-    text-wrap: nowrap;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
+  text-decoration: underline black;
 }
 
-.button-hero:hover {
-  opacity: 0.9;
-}
-
-.button-hero:first-child {
-  filter: hue-rotate(225deg);
-}
-
-.button-hero:last-child {
-  filter: hue-rotate(90deg);
-}
-
-.button-hero span {
-  position: absolute;
-  display: block;
-}
-
-.button-hero span:nth-child(1) {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, pink);
-  animation: animate-btn1 1s infinite;
-}
-
-@keyframes animate-btn1 {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-.button-hero span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, pink);
-  animation: animate-btn2 1s infinite;
-  animation-delay: 0.25s;
-}
-
-@keyframes animate-btn2 {
-  0% {
-    top: -100%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-.button-hero span:nth-child(3) {
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(180deg, transparent, pink);
-  animation: animate-btn3 1s infinite;
-  animation-delay: 0.5s;
-}
-
-@keyframes animate-btn3 {
-  0% {
-    right: -100%;
-  }
-  100% {
-    right: 100%;
-  }
-}
-.button-hero span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, pink);
-  animation: animate-btn4 1s infinite;
-  animation-delay: 0.75s;
-}
-
-@keyframes animate-btn4 {
-  0% {
-    bottom: -100%;
-  }
-  100% {
-    bottom: 100%;
-  }
-}
-.second-hero-content {
-  width: 50%;
-  height: 100%;
-  background-image: radial-gradient(circle, rgba(40, 0, 0, 0) 0%, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 50%), url("../images/anime-bc1.webp");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-@media (max-width: 650px) {
-  .second-hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media (max-width: 650px) {
-  .second-hero-content img {
-    width: 200px;
-  }
+.span-singup {
+  font-family: "Protest Revolution", sans-serif;
+  letter-spacing: 2px;
 }
 
 * {
@@ -358,29 +250,38 @@ li {
   list-style: none;
 }
 
-.section {
-  padding: 3rem 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+a:hover {
+  background: linear-gradient(to right, #b50404, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Protest Revolution", sans-serif;
+  letter-spacing: 2px;
 }
-@media (max-width: 640px) {
-  .section {
-    padding: 2rem 0.1rem;
+
+main {
+  margin-left: 5rem;
+}
+@media only screen and (max-width: 600px) {
+  main {
+    margin-left: 0rem;
   }
 }
 
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 1s;
+body::-webkit-scrollbar {
+  width: 0.25rem;
 }
 
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
+body::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+section {
+  padding: 5rem;
+}
+@media only screen and (max-width: 600px) {
+  section {
+    padding: 1rem 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,91 @@
+.log-in-container {
+  @include form-styles;
+}
+
+.register-container {
+  @include form-styles;
+}
+
+.h1-login {
+  @include headers;
+  @include color-text;
+  @media only screen and (max-width: 600px) {
+    font-size: $spacing;
+    margin-top: 5rem;
+  }
+}
+
+.h2-login {
+  font-family: $font;
+  letter-spacing: $letter-spacing;
+  @include color-text;
+  margin-top: $spacing;
+}
+
+.log-in-main-content {
+  padding: 0 20px;
+}
+.log-in-main-content label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: $font;
+  letter-spacing: $letter-spacing;
+}
+
+.log-in-main-content input[type='text'],
+.log-in-main-content input[type='password'],
+.log-in-main-content input[type='email'] {
+  @include input-styles;
+}
+.log-in-main-content input[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: $spacing;
+  background: $background-colors;
+  font-family: $font;
+  color: $primary-color;
+  letter-spacing: $letter-spacing;
+  margin: $spacing 0px $spacing 0px;
+  cursor: pointer;
+  transition: $transition;
+  font-weight: 600;
+}
+.log-in-main-content input[type='submit']:hover {
+  background: linear-gradient(to right, #000000, #b50404, #000000);
+  background-size: 200% auto;
+  background-position: left center;
+  animation: gradient-animation 1s linear infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: right center;
+  }
+  100% {
+    background-position: left center;
+  }
+}
+
+.log-in-main-content input {
+  outline: 1px solid $dark-black;
+}
+
+.log-in-main-content input[type='submit']:hover {
+  background-color: $dark-black;
+}
+
+.link-singup {
+  font-family: $font;
+  justify-self: flex-end;
+  font-size: 0.9rem;
+  @include color-text;
+  text-align: center;
+  text-decoration: underline $dark-black;
+}
+
+.span-singup {
+  font-family: $font;
+  letter-spacing: $letter-spacing;
+}
