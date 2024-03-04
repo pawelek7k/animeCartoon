@@ -1,2 +1,0 @@
-var observer=new IntersectionObserver((function(e){e.forEach((function(e){e.isIntersecting?e.target.classList.add("show"):e.target.classList.remove("show")}))})),hiddenElementsHtml=document.querySelectorAll(".hidden");hiddenElementsHtml.forEach((function(e){observer.observe(e)}));var linksHtml=document.querySelectorAll("a");linksHtml.forEach((function(e){e.addEventListener("click",(function(){event.preventDefault()}))}));
-//# sourceMappingURL=index.b6b31649.js.map
