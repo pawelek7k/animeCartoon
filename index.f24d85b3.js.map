@@ -1,0 +1,1 @@
+{"mappings":"AAAA,IAAMA,YAAc,4BACdC,OAAS","sources":["src/js/anime-cards.js"],"sourcesContent":["const baseApiPath = 'https://kitsu.io/api/edge';\nconst apiKey = 'a9b1375d859c53f0860146ccbdf1ebfb';\n"],"names":["baseApiPath","apiKey"],"version":3,"file":"index.f24d85b3.js.map"}

@@ -1,0 +1,2 @@
+var registerContainer=document.querySelector("#register-main-container"),loginContainer=document.querySelector("#login-main-container"),linkSingUp=document.querySelector(".link-singup");registerContainer.classList.add("hidden"),loginContainer.classList.add("hidden"),linkSingUp.addEventListener("click",(function(n){loginContainer.classList.remove("hidden")}));
+//# sourceMappingURL=index.4f6b3611.js.map
