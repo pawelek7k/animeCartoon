@@ -2,6 +2,10 @@
   @include form-styles;
 }
 
+.hidden {
+  display: none;
+}
+
 .register-container {
   @include form-styles;
 }

@@ -1,0 +1,56 @@
+.hero-container {
+  display: flex;
+  padding: 0rem 0rem 0rem 5rem;
+}
+
+.img-content-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.img-content-hero img {
+  height: 100%;
+}
+
+.red-moon {
+  background-color: red;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.first-content-hero {
+  padding-top: 3rem;
+}
+
+.first-content-hero h1 {
+  font-family: $font;
+  letter-spacing: $letter-spacing;
+}
+
+.japanese-hero-letters ul {
+  z-index: 2;
+}
+
+.japanese-hero-letters ul li {
+  font-size: $font-size;
+}
+
+// .japanese-hero-letters ul li:first-child {
+//   position: absolute;
+//   top: 0;
+// }
+
+// .japanese-hero-letters ul li:nth-child(3) {
+//   position: absolute;
+//   bottom: 0;
+// }
+
+.hr-hero {
+  border: 1px solid rgb(0, 0, 0);
+  width: 100px;
+  transform: rotate(90deg);
+}

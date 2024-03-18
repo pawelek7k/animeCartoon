@@ -107,6 +107,10 @@
   border-radius: 2rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .register-container {
   display: flex;
   align-items: center;
@@ -231,6 +235,53 @@
   letter-spacing: 2px;
 }
 
+.hero-container {
+  display: flex;
+  padding: 0rem 0rem 0rem 5rem;
+}
+
+.img-content-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.img-content-hero img {
+  height: 100%;
+}
+
+.red-moon {
+  background-color: red;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.first-content-hero {
+  padding-top: 3rem;
+}
+
+.first-content-hero h1 {
+  font-family: "Protest Revolution", sans-serif;
+  letter-spacing: 2px;
+}
+
+.japanese-hero-letters ul {
+  z-index: 2;
+}
+
+.japanese-hero-letters ul li {
+  font-size: 1.2rem;
+}
+
+.hr-hero {
+  border: 1px solid rgb(0, 0, 0);
+  width: 100px;
+  transform: rotate(90deg);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -273,15 +324,6 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   background-color: black;
-}
-
-section {
-  padding: 5rem;
-}
-@media only screen and (max-width: 600px) {
-  section {
-    padding: 1rem 2rem;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

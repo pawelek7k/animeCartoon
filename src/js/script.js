@@ -12,10 +12,10 @@
 
 // // end of hamburger
 
-const linkSingUp = document.querySelector('.link-singup');
-const logInContainer = document.querySelector('.login-main-container');
-const registerContainer = document.querySelector('.register-container');
+// const linkSingUp = document.querySelector('.link-singup');
+// const logInContainer = document.querySelector('.login-main-container');
+// const registerContainer = document.querySelector('.register-container');
 
-linkSingUp.addEventListener('click', e => {
-  e.preventDefault();
-});
+// linkSingUp.addEventListener('click', e => {
+//   e.preventDefault();
+// });

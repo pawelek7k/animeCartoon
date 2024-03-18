@@ -51,65 +51,93 @@
   <main>
     <section class="hero-section section">
       <div class="container hero-container">
-        <div class="login-main-container">
-          <h1 class="h1-login">Welcome to AnimeCartoon!</h1>
-          <div class="log-in-container">
-            <h2 class="h2-login">Log in</h2>
-            <div class="log-in-main-content">
-              <form action="login.php" method="post">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <input type="submit" value="Zaloguj">
-              </form>
-              <span class="span-singup">
-                No account yet?
-                <a href="" class="link-singup">
-                  Register now!
-                </a>
-              </span>
-
-            </div>
-          </div>
+        <div class="first-content-hero">
+          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut animi, illum quod illo eaque veritatis dolor
+            cum distinctio nulla. Animi esse laborum accusantium et expedita corporis quae, aspernatur quas incidunt!
+          </h1>
         </div>
-        <div class="login-main-container">
-          <h1 class="h1-login">Welcome to AnimeCartoon!</h1>
-          <div class="register-container">
-            <h2 class="h2-login">Register now!</h2>
-            <div class="log-in-main-content">
-
-              <form action="/register" method="post">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-
-                <input type="submit" value="Register">
-              </form>
-              <span class="span-singup">
-                Do you already have an account?
-                <a href="" class="link-singup">
-                  Log in!
-                </a>
-              </span>
-
-            </div>
+        <div class="img-content-hero">
+          <div class="japanese-hero-letters">
+            <ul>
+              <li>ア
+                <br>ニ
+                <br>メ
+              </li>
+              <li>
+                <hr class="hr-hero">
+              </li>
+              <li>マ
+                <br>ン
+                <br>ガ
+              </li>
+            </ul>
           </div>
+          <div class="red-moon"></div>
+          <img src="./images/hero-wallpaper.jpg" alt="">
+
         </div>
+
       </div>
     </section>
   </main>
+  <div id="login-main-container">
+    <h1 class="h1-login">Welcome to AnimeCartoon!</h1>
+    <div class="log-in-container">
+      <h2 class="h2-login">Log in</h2>
+      <div class="log-in-main-content">
+        <form action="login.php" method="post">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <input type="submit" value="Zaloguj">
+        </form>
+        <span class="span-singup">
+          No account yet?
+          <a href="" class="link-singup">
+            Register now!
+          </a>
+        </span>
+
+      </div>
+    </div>
+  </div>
+  <div id="register-main-container">
+    <h1 class="h1-login">Welcome to AnimeCartoon!</h1>
+    <div class="register-container">
+      <h2 class="h2-login">Register now!</h2>
+      <div class="log-in-main-content">
+
+        <form action="/register" method="post">
+          <label for="username-register">Username:</label>
+          <input type="text" id="username-register" name="username" required>
+
+          <label for="email-register">Email Address:</label>
+          <input type="email" id="email-register" name="email" required>
+
+          <label for="password-register">Password:</label>
+          <input type="password" id="password-register" name="password" required>
+
+          <label for="confirm_password">Confirm Password:</label>
+          <input type="password" id="confirm_password" name="confirm_password" required>
+
+          <input type="submit" value="Register">
+        </form>
+        <span class="span-singup">
+          Do you already have an account?
+          <a href="" class="link-singup">
+            Log in!
+          </a>
+        </span>
+
+      </div>
+    </div>
+  </div>
   <script src="./js/script.js"></script>
+  <script src="./js/register-js.js"></script>
+  <script src="./js/anime-cards.js"></script>
 </body>
 
 </html>
