@@ -13,6 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "shuimo-ui": "^0.3.0-alpha.14",
     "vue": "^3.4.29"
   },
   "devDependencies": {

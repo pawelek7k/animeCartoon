@@ -1,6 +1,10 @@
+import { createMUI } from 'shuimo-ui';
+import 'shuimo-ui/dist/style.css';
+import { createApp } from 'vue';
+import App from './App.vue';
 
+const app = createApp(App);
 
-import { createApp } from 'vue'
-import App from './App.vue'
+app.use(createMUI());
 
-createApp(App).mount('#app')
+app.mount('#app');

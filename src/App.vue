@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LandingHeader from './components/LandingHeader.vue'
+</script>
 
 <template>
-  <header></header>
+  <LandingHeader />
 
   <main></main>
 </template>
