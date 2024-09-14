@@ -1,30 +1,45 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const title = ref<string>('Welcome in AnimeCartoon!')
+const titles = ['Welcome in AnimeCartoon!', 'Now, take a look around us!']
+let currentIndex = 0
+let intervalId: number | undefined
 
 const changeTitle = () => {
-  title.value = 'Now, take a look around us!'
+  currentIndex = (currentIndex + 1) % titles.length
+  title.value = titles[currentIndex]
 }
+
+onMounted(() => {
+  intervalId = setInterval(changeTitle, 3000)
+})
+
+onUnmounted(() => {
+  clearInterval(intervalId)
+})
 </script>
 
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <m-button type="primary" @click="changeTitle">😉</m-button>
   </header>
 </template>
 
 <style scoped>
 header {
-  background-color: #f5f5f5;
-  padding: 20px;
+  background-image: url('../../public/images/headerImage.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
+  padding: 3rem;
   text-align: center;
   border-bottom: 2px solid #ddd;
 }
 
 h1 {
-  color: #333;
+  color: #ddd;
   font-size: 24px;
 }
 </style>
