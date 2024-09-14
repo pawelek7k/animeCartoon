@@ -36,7 +36,6 @@ header {
   margin: 1rem;
   padding: 2rem;
   text-align: center;
-  border-bottom: 2px solid #ddd;
 }
 
 h1 {
