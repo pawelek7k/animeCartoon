@@ -1,10 +1,10 @@
-<script setup lang="ts"></script>
-
 <template>
   <div>
     <nav>
-      <router-link to="/" class="nav-link">Home</router-link>
-      <router-link to="/about" class="nav-link">About</router-link>
+      <ul>
+        <li><router-link to="/" class="nav-link">Home</router-link></li>
+        <li><router-link to="/about" class="nav-link">About</router-link></li>
+      </ul>
     </nav>
     <router-view />
   </div>
@@ -15,26 +15,21 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 500px;
-  background: linear-gradient(
-    90deg,
-    rgba(69, 70, 94, 0.7315301120448179) 0%,
-    rgba(9, 6, 14, 0.09567577030812324) 51%,
-    rgba(69, 70, 94, 0.8239670868347339) 100%
-  );
-  padding: 1rem;
+  z-index: 1;
+  width: 100%;
   backdrop-filter: blur(5px);
+}
+
+ul {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 2rem;
-  display: none;
-  flex-direction: column;
+  padding: 0rem 3rem;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #2b333e;
+  color: #000;
   font-weight: bold;
   transition: 250ms ease-in-out;
   font-family: 'Trade Winds', system-ui;

@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section>
-    <m-input placeholder="Search..." />
-  </section>
+  <section></section>
 </template>
 
 <style scoped>
