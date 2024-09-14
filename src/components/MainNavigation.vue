@@ -1,11 +1,13 @@
 <template>
   <div>
-    <nav>
-      <ul>
-        <li><router-link to="/" class="nav-link">Home</router-link></li>
-        <li><router-link to="/about" class="nav-link">About</router-link></li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <ul>
+          <li><router-link to="/" class="nav-link">Home</router-link></li>
+          <li><router-link to="/about" class="nav-link">About</router-link></li>
+        </ul>
+      </nav>
+    </header>
     <router-view />
   </div>
 </template>
@@ -13,6 +15,7 @@
 <style scoped>
 nav {
   position: fixed;
+  padding: 1rem;
   top: 0;
   left: 0;
   z-index: 1;

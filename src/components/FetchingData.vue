@@ -27,12 +27,32 @@ onMounted(() => {
   <section>
     <h1>The most popular anime:</h1>
     <m-loading v-if="loading" />
-    <ul>
-      <li v-for="anime in data" :key="anime.mal_id">
-        {{ anime.title }}
+    <ul class="anime-list">
+      <li v-for="anime in data" :key="anime.mal_id" class="anime-item">
+        <img :src="anime.images.jpg.image_url" :alt="anime.title" />
+        <h3 class="anime-heading">{{ anime.title }}</h3>
+        <p>{{ anime.score }}</p>
       </li>
     </ul>
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.anime-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.anime-item {
+  width: 225px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.anime-heading {
+  font-size: 0.9rem;
+}
+</style>

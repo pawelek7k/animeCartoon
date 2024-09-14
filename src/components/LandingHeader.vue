@@ -21,20 +21,20 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header>
+  <section>
     <h1>{{ title }}</h1>
-  </header>
+  </section>
 </template>
 
 <style scoped>
-header {
+section {
   background-image: url('../../images/headerImage.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 2rem;
   margin: 1rem;
-  padding: 2rem;
+  padding: 4rem;
   text-align: center;
 }
 
