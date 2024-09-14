@@ -28,18 +28,20 @@ onUnmounted(() => {
 
 <style scoped>
 header {
-  background-image: url('../../public/images/headerImage.gif');
+  background-image: url('../../images/headerImage.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 2rem;
-  padding: 3rem;
+  margin: 1rem;
+  padding: 2rem;
   text-align: center;
   border-bottom: 2px solid #ddd;
 }
 
 h1 {
   color: #ddd;
-  font-size: 24px;
+  font-size: 3rem;
+  font-family: 'Trade Winds', system-ui;
 }
 </style>
