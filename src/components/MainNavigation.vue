@@ -13,21 +13,23 @@
 <style scoped>
 nav {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 500px;
   background: linear-gradient(
     90deg,
     rgba(69, 70, 94, 0.7315301120448179) 0%,
     rgba(9, 6, 14, 0.09567577030812324) 51%,
     rgba(69, 70, 94, 0.8239670868347339) 100%
   );
-  width: 100%;
-  border-top: thin solid #fff;
   padding: 1rem;
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   gap: 2rem;
+  display: none;
+  flex-direction: column;
 }
 
 .nav-link {
