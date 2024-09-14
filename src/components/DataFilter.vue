@@ -1,11 +1,24 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const isOpen = ref(false)
 
-function toggleMenu() {
+const toggleMenu = () => {
   isOpen.value = !isOpen.value
 }
+
+const closeMenuOnEscape = (e: KeyboardEvent) => {
+  if (e.key === 'Escape') {
+    isOpen.value = false
+  }
+}
+onMounted(() => {
+  window.addEventListener('keydown', closeMenuOnEscape)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', closeMenuOnEscape)
+})
 </script>
 
 <template>
@@ -94,6 +107,7 @@ function toggleMenu() {
   width: 40%;
   position: fixed;
   left: 0;
+  border-right: thin solid #fff;
   top: 0;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
