@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import LandingHeader from './components/LandingHeader.vue'
-import LandingHero from './components/LandingHero.vue'
+import MainNavigation from './components/MainNavigation.vue'
 </script>
 
 <template>
-  <LandingHeader />
-  <LandingHero />
-  <main></main>
+  <MainNavigation />
 </template>
 
 <style scoped></style>
