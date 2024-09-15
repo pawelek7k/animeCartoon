@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
 
 const data = ref<any>(null)
 const loading = ref(true)
@@ -18,6 +20,14 @@ const fetchData = async () => {
   }
 }
 
+const onSwiper = (swiper) => {
+  console.log(swiper)
+}
+
+const onSlideChange = () => {
+  console.log('Slide changed')
+}
+
 onMounted(() => {
   fetchData()
 })
@@ -27,9 +37,24 @@ onMounted(() => {
   <section>
     <h1>The most popular anime:</h1>
     <m-loading v-if="loading" />
-    <ul class="anime-list">
-      <li v-for="anime in data" :key="anime.mal_id" class="anime-item">
-        <img :src="anime.images.jpg.image_url" :alt="anime.title" />
+    <swiper
+      v-if="data"
+      :slides-per-view="1"
+      :autoplay="{
+        delay: 2500,
+        disableOnInteraction: false
+      }"
+      :space-between="20"
+      :breakpoints="{
+        640: { slidesPerView: 2, spaceBetween: 30 },
+        768: { slidesPerView: 3, spaceBetween: 40 },
+        1024: { slidesPerView: 6, spaceBetween: 40 }
+      }"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+    >
+      <swiper-slide v-for="anime in data" :key="anime.mal_id" class="anime-item">
+        <img :src="anime.images.jpg.image_url" :alt="anime.title" class="anime-image" />
         <h3 class="anime-heading">{{ anime.title }}</h3>
         <p>
           <span>
@@ -41,21 +66,13 @@ onMounted(() => {
             </svg> </span
           >{{ anime.score }}
         </p>
-      </li>
-    </ul>
+      </swiper-slide>
+    </swiper>
   </section>
 </template>
 
 <style scoped>
-.anime-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-}
-
 .anime-item {
-  width: 225px;
-  height: 360px;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -65,6 +82,11 @@ onMounted(() => {
   display: flex;
   gap: 0.3rem;
   align-items: center;
+}
+
+.anime-image {
+  width: 200px;
+  height: 300px;
 }
 
 .anime-heading {

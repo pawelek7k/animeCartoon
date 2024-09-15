@@ -1,4 +1,4 @@
-import { addIcons, OhVueIcon } from 'oh-vue-icons';
+import { addIcons } from 'oh-vue-icons';
 import { BiStarFill } from "oh-vue-icons/icons";
 import { createMUI } from 'shuimo-ui';
 import 'shuimo-ui/dist/style.css';
@@ -12,7 +12,6 @@ addIcons(BiStarFill);
 const app = createApp(App);
 
 app.use(createMUI());
-app.component("v-icon", OhVueIcon);
 app.use(router);
 
 app.mount('#app');
