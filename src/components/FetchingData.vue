@@ -35,7 +35,7 @@ onMounted(() => {
 
 <template>
   <section>
-    <h1>The most popular anime:</h1>
+    <h2 class="heading-section">The most popular anime:</h2>
     <m-loading v-if="loading" />
     <swiper
       v-if="data"
@@ -72,6 +72,16 @@ onMounted(() => {
 </template>
 
 <style scoped>
+section {
+  padding: 2rem 4rem;
+}
+
+.heading-section {
+  font-size: 2rem;
+  font-family: 'Trade Winds', system-ui;
+  margin-bottom: 2rem;
+}
+
 .anime-item {
   display: flex;
   flex-direction: column;
