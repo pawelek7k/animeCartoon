@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
+import Loader from './Loader.vue'
 
 const data = ref<any>(null)
 const loading = ref(true)
@@ -36,7 +37,7 @@ onMounted(() => {
 <template>
   <section>
     <h2 class="heading-section">The most popular anime:</h2>
-    <m-loading v-if="loading" />
+    <Loader />
     <swiper
       v-if="data"
       :slides-per-view="1"
