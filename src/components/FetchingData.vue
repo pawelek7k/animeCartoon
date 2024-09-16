@@ -4,9 +4,11 @@ import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import Loader from './Loader.vue'
+import { useRouter } from 'vue-router'
 
 const data = ref<any>(null)
 const loading = ref(true)
+const router = useRouter()
 
 const fetchData = async () => {
   loading.value = true
@@ -32,6 +34,10 @@ const onSlideChange = () => {
 onMounted(() => {
   fetchData()
 })
+
+const handleSlideClick = (id: number) => {
+  router.push(`/anime/${id}`)
+}
 </script>
 
 <template>
@@ -54,7 +60,12 @@ onMounted(() => {
       @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
-      <swiper-slide v-for="anime in data" :key="anime.mal_id" class="anime-item">
+      <swiper-slide
+        v-for="anime in data"
+        :key="anime.mal_id"
+        class="anime-item"
+        @click="handleSlideClick(anime.mal_id)"
+      >
         <img :src="anime.images.jpg.image_url" :alt="anime.title" class="anime-image" />
         <h3 class="anime-heading">{{ anime.title }}</h3>
         <p>

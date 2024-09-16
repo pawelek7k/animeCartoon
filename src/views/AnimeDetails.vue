@@ -1,3 +1,5 @@
 <script></script>
 
-<template></template>
+<template>
+  <h1>Anime details</h1>
+</template>
