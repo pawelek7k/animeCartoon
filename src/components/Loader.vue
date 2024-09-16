@@ -1,6 +1,6 @@
 <template>
   <div class="loader-container">
-    <m-loading v-if="loading" />
+    <m-loading />
   </div>
 </template>
 

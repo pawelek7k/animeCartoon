@@ -43,7 +43,7 @@ const handleSlideClick = (id: number) => {
 <template>
   <section>
     <h2 class="heading-section">The most popular anime:</h2>
-    <Loader />
+    <div v-if="loading"><Loader /></div>
     <swiper
       v-if="data"
       :slides-per-view="1"
