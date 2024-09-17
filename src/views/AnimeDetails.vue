@@ -30,6 +30,13 @@ onMounted(() => {
   <div v-if="loading"><Loader /></div>
   <div v-else>
     <h1>{{ data.title }}</h1>
+    <span>{{ data.rating }}</span>
+    <div>
+      <span v-for="genre in data.genres" :key="genre.mal_id">{{ genre.name }}</span>
+    </div>
+    <div>
+      <span>{{ data.episodes }}</span>
+    </div>
     <img :src="data.images.jpg.image_url" :alt="data.title" />
     <p>{{ data.synopsis }}</p>
   </div>
