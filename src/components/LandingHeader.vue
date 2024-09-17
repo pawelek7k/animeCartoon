@@ -33,7 +33,7 @@ section {
   background-size: cover;
   background-position: center;
   border-radius: 2rem;
-  margin: 1rem;
+  margin: 4rem 1rem;
   padding: 4rem;
   text-align: center;
 }

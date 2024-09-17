@@ -21,6 +21,7 @@ nav {
   z-index: 1;
   width: 100%;
   backdrop-filter: blur(5px);
+  border-bottom: thin solid #fff;
 }
 
 ul {
