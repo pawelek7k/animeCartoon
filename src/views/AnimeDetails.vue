@@ -31,9 +31,16 @@ onMounted(() => {
   <section>
     <div v-if="loading"><Loader /></div>
     <div v-else>
-      <div>
-        <h1>{{ data.title }}</h1>
-        <img :src="data.images.jpg.image_url" :alt="data.title" />
+      <div
+        class="image-details-background"
+        :style="{
+          backgroundImage: `linear-gradient(to right, #ddd, #fffa), url(${data.images.jpg.large_image_url})`
+        }"
+      >
+        <div>
+          <h1>{{ data.title }}</h1>
+          <img :src="data.images.jpg.image_url" :alt="data.title" />
+        </div>
       </div>
       <span>{{ data.rating }}</span>
       <div>
@@ -50,5 +57,26 @@ onMounted(() => {
 <style scoped>
 section {
   padding: 4rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: 'Trade Winds', system-ui;
+}
+
+.image-details-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem 0rem;
+  border-bottom: thin solid #fff;
+  border-right: thin solid #fff;
+}
+
+.image-details-background > div {
+  width: 100%;
+  padding: 3rem;
+  height: 100%;
+  backdrop-filter: blur(10px);
 }
 </style>
