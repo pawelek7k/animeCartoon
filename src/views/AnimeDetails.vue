@@ -31,7 +31,10 @@ onMounted(() => {
   <section>
     <div v-if="loading"><Loader /></div>
     <div v-else>
-      <h1>{{ data.title }}</h1>
+      <div>
+        <h1>{{ data.title }}</h1>
+        <img :src="data.images.jpg.image_url" :alt="data.title" />
+      </div>
       <span>{{ data.rating }}</span>
       <div>
         <span v-for="genre in data.genres" :key="genre.mal_id">{{ genre.name }}</span>
@@ -39,7 +42,6 @@ onMounted(() => {
       <div>
         <span>{{ data.episodes }}</span>
       </div>
-      <img :src="data.images.jpg.image_url" :alt="data.title" />
       <p>{{ data.synopsis }}</p>
     </div>
   </section>
@@ -47,6 +49,6 @@ onMounted(() => {
 
 <style scoped>
 section {
-  padding: 3rem;
+  padding: 4rem;
 }
 </style>
