@@ -44,7 +44,7 @@ onMounted(() => {
       </div>
       <div class="details-genres">
         <span>Genres: </span>
-        <p v-for="genre in data.genres" :key="genre.mal_id">{{ genre.name }}</p>
+        <p>{{ data.genres.map((genre) => genre.name).join(', ') }}</p>
       </div>
       <div class="details-rating-ep">
         <p><span>Score: </span> {{ data.score }}</p>
