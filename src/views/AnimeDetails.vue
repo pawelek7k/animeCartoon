@@ -42,12 +42,13 @@ onMounted(() => {
           <img :src="data.images.jpg.image_url" :alt="data.title" />
         </div>
       </div>
-      <span>{{ data.rating }}</span>
-      <div>
-        <span v-for="genre in data.genres" :key="genre.mal_id">{{ genre.name }}</span>
+      <div class="details-genres">
+        <span>Genres: </span>
+        <p v-for="genre in data.genres" :key="genre.mal_id">{{ genre.name }}</p>
       </div>
-      <div>
-        <span>{{ data.episodes }}</span>
+      <div class="details-rating-ep">
+        <p><span>Score: </span> {{ data.score }}</p>
+        <p><span>Episodes: </span> {{ data.episodes }}</p>
       </div>
       <p>{{ data.synopsis }}</p>
     </div>
@@ -62,6 +63,7 @@ section {
 h1 {
   font-size: 2.5rem;
   font-family: 'Trade Winds', system-ui;
+  margin-bottom: 2rem;
 }
 
 .image-details-background {
@@ -78,5 +80,19 @@ h1 {
   padding: 3rem;
   height: 100%;
   backdrop-filter: blur(10px);
+}
+
+.details-rating-ep {
+  display: flex;
+  gap: 6rem;
+  font-weight: 600;
+}
+
+.details-genres span {
+  font-weight: 600;
+}
+
+.details-genres {
+  display: flex;
 }
 </style>
