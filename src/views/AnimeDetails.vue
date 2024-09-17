@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
+import Loader from '../components/Loader.vue'
 
 const data = ref<any>(null)
 const loading = ref(true)
@@ -27,17 +28,25 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="loading"><Loader /></div>
-  <div v-else>
-    <h1>{{ data.title }}</h1>
-    <span>{{ data.rating }}</span>
-    <div>
-      <span v-for="genre in data.genres" :key="genre.mal_id">{{ genre.name }}</span>
+  <section>
+    <div v-if="loading"><Loader /></div>
+    <div v-else>
+      <h1>{{ data.title }}</h1>
+      <span>{{ data.rating }}</span>
+      <div>
+        <span v-for="genre in data.genres" :key="genre.mal_id">{{ genre.name }}</span>
+      </div>
+      <div>
+        <span>{{ data.episodes }}</span>
+      </div>
+      <img :src="data.images.jpg.image_url" :alt="data.title" />
+      <p>{{ data.synopsis }}</p>
     </div>
-    <div>
-      <span>{{ data.episodes }}</span>
-    </div>
-    <img :src="data.images.jpg.image_url" :alt="data.title" />
-    <p>{{ data.synopsis }}</p>
-  </div>
+  </section>
 </template>
+
+<style scoped>
+section {
+  padding: 3rem;
+}
+</style>
