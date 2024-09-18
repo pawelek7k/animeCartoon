@@ -46,9 +46,9 @@ onUnmounted(() => {
 <style scoped>
 .hamburger-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  padding: 1rem;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
 }
 
 .toggle-checkbox {
@@ -58,13 +58,10 @@ onUnmounted(() => {
 .hamburger {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 30px;
   height: 20px;
-  z-index: 999;
   cursor: pointer;
-  position: relative;
-  z-index: 2;
 }
 
 .hamburger .bar {
@@ -77,25 +74,16 @@ onUnmounted(() => {
     opacity 0.3s ease;
 }
 
-.toggle-checkbox:checked + .hamburger .bar:nth-child(2) {
-  transform: translate(0px, 2rem);
+.toggle-checkbox:checked + label .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.toggle-checkbox:checked + label .bar:nth-child(2) {
   opacity: 0;
-  transition-delay: 0.3s;
 }
 
-.toggle-checkbox:checked + .hamburger .bar:nth-child(3) {
-  transform: translate(0px, -2rem);
-  transition-delay: 0s;
-}
-
-.toggle-checkbox:checked + .hamburger .bar:nth-child(1) {
-  transform: rotate(-45deg) scale(0.7);
-  transition-delay: 0.6s;
-}
-
-.toggle-checkbox:checked + .hamburger .bar:nth-child(3) {
-  transform: rotate(45deg) scale(0.7);
-  transition-delay: 0.6s;
+.toggle-checkbox:checked + label .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -6px);
 }
 
 .data-filter-container {
@@ -111,7 +99,8 @@ onUnmounted(() => {
   top: 0;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
-  z-index: 1;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 100%);
+  z-index: 999;
 }
 
 .data-filter-container.is-open {
