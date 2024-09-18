@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay } from 'swiper/modules'
 
-const image = ref<string>('')
-const title = ref<string>('')
+import 'swiper/css'
+import 'swiper/css/autoplay'
+
+const slides = ref<Array<{ img: string; title: string }>>([])
 
 onMounted(() => {
   fetch('/data/hero.json')
     .then((response) => response.json())
     .then((data) => {
-      if (data.length > 0) {
-        image.value = data[0].img
-        title.value = data[0].title
-      }
+      slides.value = data
     })
     .catch((error) => {
       console.error('Error fetching the data:', error)
@@ -20,13 +21,25 @@ onMounted(() => {
 </script>
 
 <template>
-  <section
-    :style="{
-      backgroundImage: `linear-gradient(0deg, rgba(10,12,16,1) 0%, rgba(0,0,0,0.47942927170868344) 100%), url(${image})`
+  <swiper
+    :spaceBetween="30"
+    :centeredSlides="true"
+    :autoplay="{
+      delay: 2500,
+      disableOnInteraction: false
     }"
+    :modules="[Autoplay]"
+    class="mySwiper"
   >
-    <h1>{{ title }}</h1>
-  </section>
+    <swiper-slide v-for="(slide, index) in slides" :key="index">
+      <h1>{{ slide.title }}</h1>
+      <section
+        :style="{
+          backgroundImage: `linear-gradient(0deg, rgba(10,12,16,1) 0%, rgba(0,0,0,0.47942927170868344) 100%), url(${slide.img})`
+        }"
+      ></section>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <style scoped>
