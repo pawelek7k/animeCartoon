@@ -67,7 +67,7 @@ onUnmounted(() => {
 .hamburger .bar {
   width: 100%;
   height: 3px;
-  background-color: #e5e8ef;
+  background-color: var(--text);
   border-radius: 2rem;
   transition:
     transform 0.3s ease,
@@ -95,7 +95,7 @@ onUnmounted(() => {
   width: 40%;
   position: fixed;
   left: 0;
-  border-right: thin solid #fff;
+  border-right: thin solid var(--primary);
   top: 0;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;

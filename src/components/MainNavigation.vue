@@ -21,7 +21,7 @@ nav {
   z-index: 999;
   width: 100%;
   backdrop-filter: blur(5px);
-  border-bottom: thin solid #fff;
+  border-bottom: thin solid var(--primary);
 }
 
 ul {
@@ -33,12 +33,13 @@ ul {
 
 .nav-link {
   text-decoration: none;
-  color: #e5e8ef;
+  color: var(--text);
   font-weight: bold;
   transition: 250ms ease-in-out;
   font-family: 'Trade Winds', system-ui;
 }
 
 .nav-link:hover {
+  color: var(--primary);
 }
 </style>
