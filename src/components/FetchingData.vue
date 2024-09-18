@@ -42,6 +42,9 @@ const handleSlideClick = (id: number) => {
 
 <template>
   <section>
+    <div class="line-container">
+      <hr />
+    </div>
     <h2 class="heading-section">The most popular anime:</h2>
     <div v-if="loading"><Loader /></div>
     <swiper
@@ -113,5 +116,17 @@ section {
 
 .anime-heading {
   font-size: 0.9rem;
+}
+
+hr {
+  border: thin solid var(--secondary);
+  width: 50%;
+}
+
+.line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 </style>
