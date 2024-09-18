@@ -32,12 +32,13 @@ onMounted(() => {
     class="mySwiper"
   >
     <swiper-slide v-for="(slide, index) in slides" :key="index">
-      <h1>{{ slide.title }}</h1>
       <section
         :style="{
           backgroundImage: `linear-gradient(0deg, rgba(10,12,16,1) 0%, rgba(0,0,0,0.47942927170868344) 100%), url(${slide.img})`
         }"
-      ></section>
+      >
+        <h1>{{ slide.title }}</h1>
+      </section>
     </swiper-slide>
   </swiper>
 </template>
