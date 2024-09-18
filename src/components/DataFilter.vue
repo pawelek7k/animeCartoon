@@ -48,7 +48,6 @@ onUnmounted(() => {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
   padding: 1rem;
 }
 
@@ -62,6 +61,7 @@ onUnmounted(() => {
   justify-content: space-around;
   width: 30px;
   height: 20px;
+  z-index: 999;
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -70,7 +70,7 @@ onUnmounted(() => {
 .hamburger .bar {
   width: 100%;
   height: 3px;
-  background-color: #000;
+  background-color: #e5e8ef;
   border-radius: 2rem;
   transition:
     transform 0.3s ease,

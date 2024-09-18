@@ -18,7 +18,7 @@ nav {
   padding: 1rem;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 999;
   width: 100%;
   backdrop-filter: blur(5px);
   border-bottom: thin solid #fff;
@@ -33,13 +33,12 @@ ul {
 
 .nav-link {
   text-decoration: none;
-  color: #000;
+  color: #e5e8ef;
   font-weight: bold;
   transition: 250ms ease-in-out;
   font-family: 'Trade Winds', system-ui;
 }
 
 .nav-link:hover {
-  color: #0f1423;
 }
 </style>
