@@ -69,7 +69,20 @@ const handleSlideClick = (id: number) => {
         class="anime-item"
         @click="handleSlideClick(anime.mal_id)"
       >
-        <img :src="anime.images.jpg.large_image_url" :alt="anime.title" class="anime-image" />
+        <div class="anime-slide-content">
+          <img :src="anime.images.jpg.large_image_url" :alt="anime.title" class="anime-image" />
+          <div class="anime-info">
+            <p><span>Episodes: </span>{{ anime.episodes }}</p>
+            <div>
+              <span>Genres:</span>
+              <ul class="genre-list">
+                <li v-for="genre in anime.genres" :key="genre.mal_id" class="genre-item">
+                  {{ genre.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <h3 class="anime-heading">{{ anime.title }}</h3>
         <p>
           <span>
@@ -112,6 +125,8 @@ section {
 .anime-image {
   width: 250px;
   height: 370px;
+  overflow: hidden;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .anime-heading {
@@ -128,5 +143,35 @@ hr {
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+}
+
+.anime-slide-content {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.anime-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 258px;
+  background-color: #000a;
+  backdrop-filter: blur(5px);
+  color: white;
+  border-top: thin solid var(--accent);
+  padding: 10px;
+  font-size: 14px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anime-slide-content:hover .anime-info {
+  transform: translateY(0%);
+}
+
+.anime-slide-content:hover .anime-image {
+  transform: scale(1.05);
 }
 </style>
