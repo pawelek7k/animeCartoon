@@ -92,7 +92,7 @@ section {
 }
 
 .heading-section {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'Trade Winds', system-ui;
   margin-bottom: 2rem;
 }

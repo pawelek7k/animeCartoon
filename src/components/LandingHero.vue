@@ -2,13 +2,11 @@
 import { ref, onMounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper/modules'
-import axios from 'axios'
 
 import 'swiper/css'
 import 'swiper/css/autoplay'
 
 const slides = ref<Array<{ img: string; title: string }>>([])
-const data = ref<any>(null)
 
 onMounted(() => {
   fetch('/data/hero.json')
@@ -19,20 +17,6 @@ onMounted(() => {
     .catch((error) => {
       console.error('Error fetching the data:', error)
     })
-})
-
-const fetchCharacter = async () => {
-  try {
-    const response = await axios.get('https://api.jikan.moe/v4/characters')
-    console.log(response.data.data)
-    data.value = response.data.data
-  } catch (error) {
-    console.error('Error fetching data:', error)
-  }
-}
-
-onMounted(() => {
-  fetchCharacter()
 })
 </script>
 
@@ -98,6 +82,7 @@ h1 {
   background: linear-gradient(45deg, var(--primary) 4%, var(--text), var(--secondary));
   background-clip: text;
   color: transparent;
+  font-family: 'Trade Winds', system-ui;
 }
 
 .outer {
@@ -195,19 +180,5 @@ h1 {
   right: 10%;
   width: 1px;
   height: 100%;
-}
-
-.character-hero ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-.character-hero img {
-  width: 200px;
-  height: 100px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
 }
 </style>
