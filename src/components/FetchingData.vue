@@ -58,7 +58,7 @@ const handleSlideClick = (id: number) => {
       :breakpoints="{
         640: { slidesPerView: 2, spaceBetween: 30 },
         768: { slidesPerView: 3, spaceBetween: 40 },
-        1024: { slidesPerView: 6, spaceBetween: 40 }
+        1024: { slidesPerView: 5, spaceBetween: 40 }
       }"
       @swiper="onSwiper"
       @slideChange="onSlideChange"
@@ -69,7 +69,7 @@ const handleSlideClick = (id: number) => {
         class="anime-item"
         @click="handleSlideClick(anime.mal_id)"
       >
-        <img :src="anime.images.jpg.image_url" :alt="anime.title" class="anime-image" />
+        <img :src="anime.images.jpg.large_image_url" :alt="anime.title" class="anime-image" />
         <h3 class="anime-heading">{{ anime.title }}</h3>
         <p>
           <span>
@@ -110,8 +110,8 @@ section {
 }
 
 .anime-image {
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 370px;
 }
 
 .anime-heading {

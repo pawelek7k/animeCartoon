@@ -50,14 +50,6 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        <div v-if="data && data.length > 0" class="character-hero">
-          <ul>
-            <li v-for="(character, index) in data.slice(0, 6)" :key="character.mal_id">
-              <img :src="character.images.jpg.image_url" :alt="character.name" />
-              <p>{{ character.name }}</p>
-            </li>
-          </ul>
-        </div>
       </section>
     </swiper-slide>
   </swiper>
@@ -68,7 +60,6 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   height: 100vh;
   background-size: cover;
   background-position: center;
