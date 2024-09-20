@@ -72,11 +72,16 @@ const handleSlideClick = (id: number) => {
         <div class="anime-slide-content">
           <img :src="anime.images.jpg.large_image_url" :alt="anime.title" class="anime-image" />
           <div class="anime-info">
-            <p><span>Episodes: </span>{{ anime.episodes }}</p>
-            <div>
-              <span>Genres:</span>
+            <p><span class="info-span">Episodes:</span>{{ anime.episodes }}</p>
+            <div class="genres-container">
+              <span class="info-span">Genres:</span>
               <ul class="genre-list">
-                <li v-for="genre in anime.genres" :key="genre.mal_id" class="genre-item">
+                <li
+                  v-for="(genre, index) in anime.genres"
+                  :key="genre.mal_id"
+                  class="genre-item"
+                  :class="{ 'last-item': index === anime.genres.length - 1 }"
+                >
                   {{ genre.name }}
                 </li>
               </ul>
@@ -110,10 +115,20 @@ section {
   margin-bottom: 2rem;
 }
 
+.genre-list {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .anime-item {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
 }
 
 .anime-item > p {
@@ -127,6 +142,29 @@ section {
   height: 370px;
   overflow: hidden;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anime-info > p {
+  display: flex;
+  gap: 10px;
+}
+
+.genres-container {
+  display: flex;
+  gap: 10px;
+}
+
+.info-span {
+  font-weight: bolder;
+}
+
+.genre-item::after {
+  content: '•';
+  margin-left: 10px;
+}
+
+.genre-item.last-item::after {
+  content: '';
 }
 
 .anime-heading {
@@ -156,7 +194,7 @@ hr {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 258px;
+  width: 256px;
   background-color: #000a;
   backdrop-filter: blur(5px);
   color: white;
