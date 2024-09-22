@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import LandingHero from '../components/LandingHero.vue'
 import FetchingPopularAnime from '../components/FetchingPopularAnime.vue'
+import FetchingNewAnime from '../components/FetchingNewAnime.vue'
 import DataFilter from '../components/DataFilter.vue'
 </script>
 
@@ -9,6 +10,7 @@ import DataFilter from '../components/DataFilter.vue'
   <main>
     <LandingHero />
     <FetchingPopularAnime />
+    <FetchingNewAnime />
   </main>
 </template>
 
