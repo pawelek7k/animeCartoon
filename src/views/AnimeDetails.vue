@@ -43,14 +43,17 @@ onMounted(() => {
         </div>
       </div>
       <div class="details">
-        <div class="details-genres">
-          <p>{{ data.rating }}</p>
-          <span>Genres: </span>
-          <p>{{ data.genres.map((genre) => genre.name).join(', ') }}</p>
-        </div>
+        <p>{{ data.rating }}</p>
         <div class="details-rating-ep">
           <p><span>Score: </span> {{ data.score }}</p>
           <p><span>Episodes: </span> {{ data.episodes }}</p>
+        </div>
+        <div class="details-genres">
+          <ul>
+            <li v-for="(genre, index) in data.genres" :key="index">
+              <a href="">{{ genre.name }}</a>
+            </li>
+          </ul>
         </div>
         <p>{{ data.synopsis }}</p>
       </div>
@@ -91,6 +94,9 @@ h1 {
 .details {
   color: var(--text-accent);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .details-rating-ep {
@@ -99,11 +105,29 @@ h1 {
   font-weight: 600;
 }
 
-.details-genres span {
-  font-weight: 600;
+.details-genres ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
 }
 
-.details-genres > p {
+.details-genres li {
+  border: thin solid var(--accent);
+  padding: 0.2rem 0.4rem;
+  border-radius: 2rem;
+  transition: 250ms ease-in-out;
+}
+
+.details-genres li a {
+  color: var(--text-accent);
+  text-decoration: none;
+}
+
+.details-genres li:hover {
+  background-color: var(--accent);
+}
+
+.details > p {
   font-size: 0.9rem;
 }
 </style>
