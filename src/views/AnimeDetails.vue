@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
 import axios from 'axios'
+import { onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import Loader from '../components/Loader.vue'
 
 const data = ref<any>(null)
@@ -34,7 +34,7 @@ onMounted(() => {
       <div
         class="image-details-background"
         :style="{
-          backgroundImage: `linear-gradient(to right, #ddd, #fffa), url(${data.images.jpg.large_image_url})`
+          backgroundImage: `linear-gradient(to right, #0a0c10, #000a), url(${data.images.jpg.large_image_url})`
         }"
       >
         <div>
@@ -71,8 +71,8 @@ h1 {
   background-size: cover;
   background-position: center;
   border-radius: 2rem 0rem;
-  border-bottom: thin solid #fff;
-  border-right: thin solid #fff;
+  border-bottom: thin solid #000000;
+  border-right: thin solid #000000;
 }
 
 .image-details-background > div {
