@@ -79,7 +79,7 @@ h1 {
   width: 100%;
   padding: 3rem;
   height: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 }
 
 .details-rating-ep {
