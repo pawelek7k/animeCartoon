@@ -88,6 +88,11 @@ h1 {
   backdrop-filter: blur(5px);
 }
 
+.details {
+  color: var(--text-accent);
+  padding: 2rem;
+}
+
 .details-rating-ep {
   display: flex;
   gap: 6rem;
@@ -98,7 +103,7 @@ h1 {
   font-weight: 600;
 }
 
-.details-genres {
-  display: flex;
+.details-genres > p {
+  font-size: 0.9rem;
 }
 </style>
