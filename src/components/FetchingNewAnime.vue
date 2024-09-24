@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import 'swiper/css'
-import Loader from './Loader.vue'
+import { onMounted, ref } from 'vue'
 import AnimeList from './AnimeList.vue'
+import Loader from './Loader.vue'
 
 const data = ref<any>(null)
 const loading = ref(true)
@@ -30,7 +30,10 @@ onMounted(() => {
     <div class="line-container">
       <hr />
     </div>
-    <h2 class="heading-section">New anime seasons:</h2>
+    <div class="text-container">
+      <h2 class="heading-section">New anime seasons:</h2>
+      <p>Start your binge before the new season begins!</p>
+    </div>
     <div v-if="loading"><Loader /></div>
     <AnimeList :data="data" />
   </section>
@@ -40,10 +43,19 @@ section {
   padding: 2rem 4rem;
 }
 
+.text-container {
+  margin-bottom: 2rem;
+}
+
+.text-container p {
+  color: var(--text-accent);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
 .heading-section {
   font-size: 2.5rem;
   font-family: 'Trade Winds', system-ui;
-  margin-bottom: 2rem;
 }
 
 hr {
