@@ -42,15 +42,21 @@ onMounted(() => {
           <img :src="data.images.jpg.image_url" :alt="data.title" />
         </div>
       </div>
-      <div class="details-genres">
-        <span>Genres: </span>
-        <p>{{ data.genres.map((genre) => genre.name).join(', ') }}</p>
+      <div class="details">
+        <div class="details-genres">
+          <p>{{ data.rating }}</p>
+          <span>Genres: </span>
+          <p>{{ data.genres.map((genre) => genre.name).join(', ') }}</p>
+        </div>
+        <div class="details-rating-ep">
+          <p><span>Score: </span> {{ data.score }}</p>
+          <p><span>Episodes: </span> {{ data.episodes }}</p>
+        </div>
+        <p>{{ data.synopsis }}</p>
       </div>
-      <div class="details-rating-ep">
-        <p><span>Score: </span> {{ data.score }}</p>
-        <p><span>Episodes: </span> {{ data.episodes }}</p>
-      </div>
-      <p>{{ data.synopsis }}</p>
+      <div class="ad"></div>
+      <div class="episodes"></div>
+      <div class="more-like-this"></div>
     </div>
   </section>
 </template>
