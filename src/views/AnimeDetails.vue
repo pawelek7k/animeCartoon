@@ -8,6 +8,11 @@ const data = ref<any>(null)
 const loading = ref(true)
 const route = useRoute()
 const mal_id = route.params.id
+const showFullSynopsis = ref(false)
+
+const toggleSynopsis = () => {
+  showFullSynopsis.value = !showFullSynopsis.value
+}
 
 const fetchData = async () => {
   loading.value = true
@@ -61,20 +66,21 @@ onMounted(() => {
             </li>
           </ul>
         </div>
-        <div class="data-synopsis">
+        <div class="data-synopsis" v-if="data.synopsis" :class="{ expanded: showFullSynopsis }">
           <p>{{ data.synopsis }}</p>
           <ul>
             <li>
-              <span>studios </span
-              ><span v-for="(studio, index) in data.studios" :key="index">{{ studio.name }}</span>
+              <span>studios </span>
+              <span v-for="(studio, index) in data.studios" :key="index">{{ studio.name }}</span>
             </li>
             <li>
-              <span>producers </span
-              ><span v-for="(producer, index) in data.producers" :key="index">{{
+              <span>producers </span>
+              <span v-for="(producer, index) in data.producers" :key="index">{{
                 producer.name
               }}</span>
             </li>
           </ul>
+          <button v-if="!showFullSynopsis" @click="toggleSynopsis">More details</button>
         </div>
       </div>
       <div class="ad"></div>
@@ -87,6 +93,23 @@ onMounted(() => {
 <style scoped>
 section {
   padding: 4rem;
+}
+
+.data-synopsis.expanded {
+  max-height: none;
+}
+
+.data-synopsis button {
+  border: none;
+  color: var(--text);
+  bottom: -10px;
+  background-color: transparent;
+  text-transform: uppercase;
+  border-bottom: thin solid var(--accent);
+  z-index: 10;
+  position: absolute;
+  overflow: visible;
+  cursor: pointer;
 }
 
 .btns-details ul {
@@ -190,5 +213,9 @@ h1 {
 .data-synopsis {
   width: 50%;
   font-size: 1rem;
+  max-height: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s ease-in-out;
 }
 </style>
