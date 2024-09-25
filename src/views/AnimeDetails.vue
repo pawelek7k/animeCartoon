@@ -70,11 +70,11 @@ onMounted(() => {
           <p>{{ data.synopsis }}</p>
           <ul>
             <li>
-              <span>studios </span>
+              <span>Studios</span>
               <span>{{ data.studios.map((studio) => studio.name).join(', ') }}</span>
             </li>
             <li>
-              <span>producers </span>
+              <span>Producers</span>
               <div>
                 <span>{{ data.producers.map((producer) => producer.name).join(', ') }}</span>
               </div>
@@ -222,5 +222,11 @@ h1 {
 .data-synopsis li {
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
+  border-bottom: thin solid var(--accent);
+}
+
+.data-synopsis li div {
+  max-width: 20rem;
 }
 </style>
