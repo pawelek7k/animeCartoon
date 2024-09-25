@@ -48,6 +48,12 @@ onMounted(() => {
           <p><span>Score: </span> {{ data.score }}</p>
           <p><span>Episodes: </span> {{ data.episodes }}</p>
         </div>
+        <div class="btns-details">
+          <ul>
+            <li><button>Add to watchlist</button></li>
+            <li><button>Start watching</button></li>
+          </ul>
+        </div>
         <div class="details-genres">
           <ul>
             <li v-for="(genre, index) in data.genres" :key="index">
@@ -71,8 +77,44 @@ section {
   padding: 4rem;
 }
 
+.btns-details ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+.btns-details button {
+  cursor: pointer;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  border: thin solid var(--accent);
+  background-color: var(--accent);
+  font-weight: 600;
+  color: var(--text);
+  transition: 0.3s ease-in-out;
+}
+
+.btns-details button:hover {
+  background-color: var(--secondary);
+  border: thin solid var(--secondary);
+}
+
+.btns-details ul li:nth-of-type(2) button {
+  background-color: transparent;
+  border: thin solid var(--accent);
+  color: var(--accent);
+  transition: 0.3s ease-in-out;
+}
+
+.btns-details ul li:nth-of-type(2) button:hover {
+  border: thin solid var(--secondary);
+  color: var(--secondary);
+}
+
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: 'Trade Winds', system-ui;
   margin-bottom: 2rem;
 }
@@ -110,7 +152,7 @@ h1 {
 .details-genres ul {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .details-genres li {
