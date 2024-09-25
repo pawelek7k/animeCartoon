@@ -63,6 +63,18 @@ onMounted(() => {
         </div>
         <div class="data-synopsis">
           <p>{{ data.synopsis }}</p>
+          <ul>
+            <li>
+              <span>studios </span
+              ><span v-for="(studio, index) in data.studios" :key="index">{{ studio.name }}</span>
+            </li>
+            <li>
+              <span>producers </span
+              ><span v-for="(producer, index) in data.producers" :key="index">{{
+                producer.name
+              }}</span>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="ad"></div>
