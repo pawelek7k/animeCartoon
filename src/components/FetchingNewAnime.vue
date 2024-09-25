@@ -60,7 +60,7 @@ section {
 
 hr {
   border: thin solid var(--secondary);
-  width: 40%;
+  width: 30%;
 }
 
 .line-container {

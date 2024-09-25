@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const anime = ref<Array<{ img: string; title: string; description: string }>>([])
 
@@ -25,4 +25,27 @@ onMounted(() => {
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+section {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-family: 'Trade Winds', system-ui;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+</style>

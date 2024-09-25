@@ -32,11 +32,16 @@ onMounted(() => {
       <hr />
     </div>
     <div class="text-container">
-      <h2 class="heading-section">New anime seasons:</h2>
+      <h2 class="heading-section">The most popular anime:</h2>
       <p>Maybe we can watch it again?</p>
     </div>
     <div v-if="loading"><Loader /></div>
-    <AnimeList :data="data" />
+    <div>
+      <AnimeList :data="data" />
+    </div>
+    <div class="line-container second-line">
+      <hr />
+    </div>
   </section>
 </template>
 
@@ -63,6 +68,14 @@ section {
 hr {
   border: thin solid var(--secondary);
   width: 50%;
+}
+
+.second-line {
+  margin-top: 2rem;
+}
+
+.second-line hr {
+  width: 40%;
 }
 
 .line-container {
