@@ -55,7 +55,7 @@ onMounted(() => {
             </li>
           </ul>
         </div>
-        <p>{{ data.synopsis }}</p>
+        <p class="data-synopsis">{{ data.synopsis }}</p>
       </div>
       <div class="ad"></div>
       <div class="episodes"></div>
@@ -127,7 +127,12 @@ h1 {
   background-color: var(--accent);
 }
 
-.details > p {
+.details > p:first-of-type {
   font-size: 0.9rem;
+}
+
+.data-synopsis {
+  width: 50%;
+  font-size: 1rem;
 }
 </style>
