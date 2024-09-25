@@ -55,7 +55,9 @@ onMounted(() => {
             </li>
           </ul>
         </div>
-        <p class="data-synopsis">{{ data.synopsis }}</p>
+        <div class="data-synopsis">
+          <p>{{ data.synopsis }}</p>
+        </div>
       </div>
       <div class="ad"></div>
       <div class="episodes"></div>
