@@ -71,13 +71,13 @@ onMounted(() => {
           <ul>
             <li>
               <span>studios </span>
-              <span v-for="(studio, index) in data.studios" :key="index">{{ studio.name }}</span>
+              <span>{{ data.studios.map((studio) => studio.name).join(', ') }}</span>
             </li>
             <li>
               <span>producers </span>
-              <span v-for="(producer, index) in data.producers" :key="index">{{
-                producer.name
-              }}</span>
+              <div>
+                <span>{{ data.producers.map((producer) => producer.name).join(', ') }}</span>
+              </div>
             </li>
           </ul>
           <button v-if="!showFullSynopsis" @click="toggleSynopsis">More details</button>
@@ -102,7 +102,7 @@ section {
 .data-synopsis button {
   border: none;
   color: var(--text);
-  bottom: -10px;
+  bottom: 20px;
   background-color: transparent;
   text-transform: uppercase;
   border-bottom: thin solid var(--accent);
@@ -217,5 +217,10 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
   transition: max-height 0.3s ease-in-out;
+}
+
+.data-synopsis li {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
