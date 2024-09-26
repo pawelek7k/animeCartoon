@@ -16,4 +16,8 @@ import LandingHero from '../components/LandingHero.vue'
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  padding: 0rem 0rem 0rem 3rem;
+}
+</style>
