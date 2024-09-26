@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 const isOpen = ref(false)
 
@@ -38,7 +38,18 @@ onUnmounted(() => {
       </label>
     </div>
     <div class="data-filter-container" :class="{ 'is-open': isOpen }">
-      <m-input placeholder="Search..." />
+      <div class="data-filter-content" :class="{ 'is-closed': !isOpen }">
+        <ul>
+          <li>F</li>
+          <li>F</li>
+          <li>F</li>
+          <li>F</li>
+          <li>F</li>
+          <li>F</li>
+          <li>F</li>
+          <li>F</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -46,8 +57,8 @@ onUnmounted(() => {
 <style scoped>
 .hamburger-container {
   position: fixed;
-  top: 1rem;
-  left: 1rem;
+  top: 1.2rem;
+  left: 1.7rem;
   z-index: 1000;
 }
 
@@ -87,23 +98,43 @@ onUnmounted(() => {
 }
 
 .data-filter-container {
-  padding: 4rem 2rem;
+  padding: 4rem 0.5rem;
   backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 40%;
+  width: 90px;
   position: fixed;
   left: 0;
-  border-right: thin solid var(--primary);
   top: 0;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+  transition:
+    width 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 100%);
   z-index: 999;
 }
 
+.data-filter-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.data-filter-content.is-closed {
+  border-radius: 2rem;
+  border: thin solid var(--primary);
+  padding: 2rem;
+}
+
+.data-filter-container.is-open .data-filter-content {
+  border-radius: 0;
+  width: 100%;
+  border: none;
+}
+
 .data-filter-container.is-open {
+  width: 40%;
   transform: translateX(0);
 }
 </style>
