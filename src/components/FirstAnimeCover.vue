@@ -48,4 +48,17 @@ div {
   flex-direction: column;
   justify-content: center;
 }
+
+@media (max-width: 1200px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    display: none;
+  }
+}
 </style>
