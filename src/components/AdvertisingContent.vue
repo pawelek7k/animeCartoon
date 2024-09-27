@@ -33,4 +33,11 @@ h2 {
 p {
   font-size: 0.9rem;
 }
+
+@media (max-width: 1000px) {
+  .ad-container {
+    width: 100%;
+    padding: 1rem;
+  }
+}
 </style>

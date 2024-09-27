@@ -174,4 +174,10 @@ const toggleSynopsis = () => {
 .data-synopsis li div {
   max-width: 20rem;
 }
+
+@media (max-width: 1000px) {
+  .data-synopsis {
+    width: 100%;
+  }
+}
 </style>
