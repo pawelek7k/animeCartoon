@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AdvertisingContent from '@/components/AdvertisingContent.vue'
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
@@ -83,7 +84,9 @@ onMounted(() => {
           <button v-if="!showFullSynopsis" @click="toggleSynopsis">More details</button>
         </div>
       </div>
-      <div class="ad"></div>
+      <div class="ad">
+        <AdvertisingContent />
+      </div>
       <div class="episodes"></div>
       <div class="more-like-this"></div>
     </div>
