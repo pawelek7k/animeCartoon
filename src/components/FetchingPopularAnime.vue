@@ -84,4 +84,10 @@ hr {
   justify-content: center;
   margin-bottom: 2rem;
 }
+
+@media (max-width: 800px) {
+  .second-line {
+    display: none;
+  }
+}
 </style>
