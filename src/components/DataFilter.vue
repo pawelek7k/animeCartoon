@@ -1,7 +1,26 @@
 <script setup lang="ts">
+import axios from 'axios'
 import { onMounted, onUnmounted, ref } from 'vue'
-
 const isOpen = ref(false)
+const data = ref<any>(null)
+const loading = ref(true)
+
+const fetchData = async () => {
+  loading.value = true
+  try {
+    const response = await axios.get('https://api.jikan.moe/v4/genres/anime')
+    console.log(response.data.data)
+    data.value = response.data.data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  } finally {
+    loading.value = false
+  }
+}
+
+onMounted(() => {
+  fetchData()
+})
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
@@ -40,14 +59,10 @@ onUnmounted(() => {
     <div class="data-filter-container" :class="{ 'is-open': isOpen }">
       <div class="data-filter-content" :class="{ 'is-closed': !isOpen }">
         <ul>
-          <li>F</li>
-          <li>F</li>
-          <li>F</li>
-          <li>F</li>
-          <li>F</li>
-          <li>F</li>
-          <li>F</li>
-          <li>F</li>
+          <li v-for="genre in data" :key="genre.mal_id">
+            <span class="first-letter">{{ genre.name.charAt(0) }}</span
+            ><span>{{ genre.name.slice(1) }}</span>
+          </li>
         </ul>
       </div>
     </div>
@@ -118,9 +133,8 @@ onUnmounted(() => {
   height: 100%;
   width: 100%;
   transition: all 0.3s ease-in-out;
-}
-
-.data-filter-content {
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 2rem;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 100%);
   backdrop-filter: blur(5px);
@@ -130,6 +144,7 @@ onUnmounted(() => {
   border-radius: 2rem;
   border: thin solid var(--primary);
   padding: 2rem;
+  overflow-y: hidden;
 }
 
 .data-filter-container.is-open .data-filter-content {
