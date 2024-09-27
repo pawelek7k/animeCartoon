@@ -121,6 +121,10 @@ onUnmounted(() => {
   transition: all 0.3s ease-in-out;
 }
 
+.data-filter-content {
+  padding: 2rem;
+}
+
 .data-filter-content.is-closed {
   border-radius: 2rem;
   border: thin solid var(--primary);
