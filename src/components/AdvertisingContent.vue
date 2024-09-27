@@ -1,13 +1,19 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="ad-container"></div>
+  <div class="ad-container">
+    <div>
+      <h2>Watch this series without ads!</h2>
+      <p>Try AnimeCartoon Premium free for 7 days.</p>
+    </div>
+    <button>Try premium!</button>
+  </div>
 </template>
 
 <style scoped>
 .ad-container {
   width: 500px;
-  height: 50px;
+
   border: thin solid red;
   background: url('/public/images/ad.jfif');
   background-repeat: no-repeat;
