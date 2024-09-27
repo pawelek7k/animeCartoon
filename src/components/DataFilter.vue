@@ -99,7 +99,6 @@ onUnmounted(() => {
 
 .data-filter-container {
   padding: 4rem 0.5rem;
-  backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -111,7 +110,7 @@ onUnmounted(() => {
   transition:
     width 0.3s ease-in-out,
     transform 0.3s ease-in-out;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 100%);
+  background: transparent;
   z-index: 999;
 }
 
@@ -123,6 +122,8 @@ onUnmounted(() => {
 
 .data-filter-content {
   padding: 2rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 100%);
+  backdrop-filter: blur(5px);
 }
 
 .data-filter-content.is-closed {
@@ -132,7 +133,7 @@ onUnmounted(() => {
 }
 
 .data-filter-container.is-open .data-filter-content {
-  border-radius: 0;
+  border-radius: 2rem;
   width: 100%;
   border: none;
 }
