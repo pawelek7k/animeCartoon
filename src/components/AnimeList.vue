@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { SwiperSlide } from 'swiper/vue'
-import { useRouter } from 'vue-router'
 import 'swiper/css'
-import { Swiper } from 'swiper/vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
@@ -40,7 +39,8 @@ const handleSlideClick = (id: number) => {
     :breakpoints="{
       640: { slidesPerView: 2, spaceBetween: 30 },
       768: { slidesPerView: 3, spaceBetween: 40 },
-      1024: { slidesPerView: 5, spaceBetween: 40 }
+      1024: { slidesPerView: 4, spaceBetween: 40 },
+      1250: { slidesPerView: 5, spaceBetween: 40 }
     }"
     @swiper="onSwiper"
     @slideChange="onSlideChange"
