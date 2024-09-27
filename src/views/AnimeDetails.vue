@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AdvertisingContent from '@/components/AdvertisingContent.vue'
+import PrimaryButton from '@/components/PrimaryButton.vue'
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
@@ -56,7 +57,7 @@ onMounted(() => {
         </div>
         <div class="btns-details">
           <ul>
-            <li><button>Add to watchlist</button></li>
+            <li><PrimaryButton label="Add to watchlist" /></li>
             <li><button>Start watching</button></li>
           </ul>
         </div>
