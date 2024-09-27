@@ -44,12 +44,14 @@ onMounted(() => {
           <img :src="data.images.jpg.image_url" :alt="data.title" />
         </div>
       </div>
-      <RenderDetails :data="data" />
-      <div class="ad">
-        <AdvertisingContent />
+      <div class="details-container">
+        <RenderDetails :data="data" />
+        <div class="ad">
+          <AdvertisingContent />
+        </div>
+        <div class="episodes"></div>
+        <div class="more-like-this"></div>
       </div>
-      <div class="episodes"></div>
-      <div class="more-like-this"></div>
     </div>
   </section>
 </template>
@@ -63,6 +65,10 @@ h1 {
   font-size: 3rem;
   font-family: 'Trade Winds', system-ui;
   margin-bottom: 2rem;
+}
+
+.details-container {
+  padding: 2rem;
 }
 
 .image-details-background {

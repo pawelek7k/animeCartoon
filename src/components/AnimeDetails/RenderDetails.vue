@@ -117,10 +117,10 @@ const toggleSynopsis = () => {
 
 .details {
   color: var(--text-accent);
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 5rem;
 }
 
 .details-rating-ep {
