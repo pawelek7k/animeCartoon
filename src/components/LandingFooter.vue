@@ -4,15 +4,34 @@
   <footer>
     <div>
       <h3>Navigation</h3>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+      </ul>
     </div>
     <div>
       <h3>Contact</h3>
+      <ul>
+        <li>Youtube</li>
+        <li>Facebook</li>
+        <li>X</li>
+        <li>Instagram</li>
+      </ul>
     </div>
     <div>
       <h3>AnimeCartoon</h3>
+      <ul>
+        <li>Help</li>
+        <li>Privacy Policy</li>
+        <li>Help Center</li>
+      </ul>
     </div>
     <div>
       <h3>Account</h3>
+      <ul>
+        <li>Log in</li>
+        <li>Create Account</li>
+      </ul>
     </div>
   </footer>
 </template>
