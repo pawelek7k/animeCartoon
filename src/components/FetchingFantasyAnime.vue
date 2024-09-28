@@ -37,7 +37,6 @@ onMounted(() => {
     </div>
     <div class="text-container">
       <h2 class="heading-section">Fantasy word!</h2>
-      <p>Start your binge before the new season begins!</p>
     </div>
     <div v-if="loading"><Loader /></div>
     <AnimeList :data="fantasyData" />
@@ -51,12 +50,6 @@ section {
 
 .text-container {
   margin-bottom: 2rem;
-}
-
-.text-container p {
-  color: var(--text-accent);
-  font-size: 0.9rem;
-  text-transform: uppercase;
 }
 
 .heading-section {
