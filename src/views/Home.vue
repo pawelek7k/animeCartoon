@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import FetchingFantasyAnime from '@/components/FetchingFantasyAnime.vue'
 import FirstAnimeCover from '@/components/FirstAnimeCover.vue'
 import DataFilter from '../components/DataFilter.vue'
 import FetchingNewAnime from '../components/FetchingNewAnime.vue'
@@ -13,6 +14,7 @@ import LandingHero from '../components/LandingHero.vue'
     <FetchingPopularAnime />
     <FirstAnimeCover />
     <FetchingNewAnime />
+    <FetchingFantasyAnime />
   </main>
 </template>
 
