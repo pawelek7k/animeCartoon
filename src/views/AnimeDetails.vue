@@ -67,6 +67,12 @@ h1 {
   margin-bottom: 2rem;
 }
 
+@media (max-width: 800px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
 .details-container {
   padding: 2rem;
 }
@@ -85,5 +91,11 @@ h1 {
   padding: 3rem;
   height: 100%;
   backdrop-filter: blur(5px);
+}
+
+@media (max-width: 800px) {
+  section {
+    padding: 0rem;
+  }
 }
 </style>

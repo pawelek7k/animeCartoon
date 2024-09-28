@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue'
 import PrimaryButton from '../PrimaryButton.vue'
+import SecondaryButton from '../SecondaryButton.vue'
 
 interface DataProps {
   rating: string
@@ -32,7 +33,7 @@ const toggleSynopsis = () => {
     <div class="btns-details">
       <ul>
         <li><PrimaryButton label="Add to watchlist" /></li>
-        <li><button>Start watching</button></li>
+        <li><SecondaryButton label="Start watching" /></li>
       </ul>
     </div>
     <div class="details-genres">
@@ -69,7 +70,7 @@ const toggleSynopsis = () => {
 .data-synopsis button {
   border: none;
   color: var(--text);
-  bottom: 20px;
+  bottom: -40px;
   background-color: transparent;
   text-transform: uppercase;
   border-bottom: thin solid var(--accent);
@@ -85,42 +86,13 @@ const toggleSynopsis = () => {
   gap: 3rem;
 }
 
-.btns-details button {
-  cursor: pointer;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  text-transform: uppercase;
-  border: thin solid var(--accent);
-  background-color: var(--accent);
-  font-weight: 600;
-  color: var(--text);
-  transition: 0.3s ease-in-out;
-}
-
-.btns-details button:hover {
-  background-color: var(--secondary);
-  border: thin solid var(--secondary);
-}
-
-.btns-details ul li:nth-of-type(2) button {
-  background-color: transparent;
-  border: thin solid var(--accent);
-  color: var(--accent);
-  transition: 0.3s ease-in-out;
-}
-
-.btns-details ul li:nth-of-type(2) button:hover {
-  border: thin solid var(--secondary);
-  color: var(--secondary);
-}
-
 .details {
   color: var(--text-accent);
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 5rem;
+  position: relative;
 }
 
 .details-rating-ep {
@@ -178,6 +150,18 @@ const toggleSynopsis = () => {
 @media (max-width: 1000px) {
   .data-synopsis {
     width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .btns-details ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .details-rating-ep {
+    justify-content: center;
   }
 }
 </style>
