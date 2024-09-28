@@ -49,7 +49,6 @@ onMounted(() => {
         <div class="ad">
           <AdvertisingContent />
         </div>
-        <div class="episodes"></div>
         <div class="more-like-this"></div>
       </div>
     </div>
