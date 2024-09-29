@@ -4,11 +4,13 @@ import RenderDetails from '@/components/AnimeDetails/RenderDetails.vue'
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import AnimeList from '../components/AnimeList.vue'
 import Loader from '../components/Loader.vue'
 
 const data = ref<any>(null)
 const loading = ref(true)
 const route = useRoute()
+const moreLikeThis = ref<any[]>([])
 const mal_id = route.params.id
 
 const fetchData = async () => {
@@ -17,10 +19,23 @@ const fetchData = async () => {
     const response = await axios.get(`https://api.jikan.moe/v4/anime/${mal_id}`)
     console.log(response.data.data)
     data.value = response.data.data
+    fetchMoreLikeThis(data.value.genres)
   } catch (error) {
     console.error('Error fetching data:', error)
   } finally {
     loading.value = false
+  }
+}
+
+const fetchMoreLikeThis = async (genres: any[]) => {
+  if (!genres.length) return
+
+  try {
+    const genreId = genres[0].mal_id
+    const response = await axios.get(`https://api.jikan.moe/v4/anime?genres=${genreId}`)
+    moreLikeThis.value = response.data.data
+  } catch (error) {
+    console.error('Error fetching more-like-this data:', error)
   }
 }
 
@@ -49,7 +64,15 @@ onMounted(() => {
         <div class="ad">
           <AdvertisingContent />
         </div>
-        <div class="more-like-this"></div>
+        <div class="more-like-this">
+          <h3>More like this</h3>
+          <div v-if="moreLikeThis.length">
+            <AnimeList :data="moreLikeThis" />
+          </div>
+          <div v-else>
+            <p>No similar anime found.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -58,6 +81,12 @@ onMounted(() => {
 <style scoped>
 section {
   padding: 4rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-family: 'Trade Winds', system-ui;
+  margin: 2rem 0rem;
 }
 
 h1 {
