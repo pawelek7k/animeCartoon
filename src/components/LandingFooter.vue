@@ -7,32 +7,32 @@ import StyledLink from './StyledLink.vue'
     <div>
       <h3>Navigation</h3>
       <ul>
-        <li><StyledLink label="Home" /></li>
-        <li>About</li>
+        <li><StyledLink label="Home" href="/" /></li>
+        <li><StyledLink label="About" href="/about" /></li>
       </ul>
     </div>
     <div>
       <h3>Contact</h3>
       <ul>
-        <li>Youtube</li>
-        <li>Facebook</li>
-        <li>X</li>
-        <li>Instagram</li>
+        <li><StyledLink label="YouTube" href="https://www.youtube.com" /></li>
+        <li><StyledLink label="Facebook" href="https://www.facebook.com" /></li>
+        <li><StyledLink label="X" href="https://x.com/X" /></li>
+        <li><StyledLink label="Instagram" href="https://www.instagram.com" /></li>
       </ul>
     </div>
     <div>
       <h3>AnimeCartoon</h3>
       <ul>
-        <li>Help</li>
-        <li>Privacy Policy</li>
-        <li>Help Center</li>
+        <li><StyledLink label="Help" /></li>
+        <li><StyledLink label="Privacy Policy" /></li>
+        <li><StyledLink label="Help Center" /></li>
       </ul>
     </div>
     <div>
       <h3>Account</h3>
       <ul>
-        <li>Log in</li>
-        <li>Create Account</li>
+        <li><StyledLink label="Log in" /></li>
+        <li><StyledLink label="Create Account" /></li>
       </ul>
     </div>
   </footer>
@@ -49,5 +49,22 @@ footer {
 
 h3 {
   font-family: 'Trade Winds', system-ui;
+  color: var(--secondary);
+}
+
+ul {
+  margin-top: 0.5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  footer {
+    height: 100%;
+    gap: 2rem;
+    flex-direction: column;
+  }
 }
 </style>
