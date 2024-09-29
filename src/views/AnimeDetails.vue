@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import AdvertisingContent from '@/components/AdvertisingContent.vue'
+import MoreLikeThis from '@/components/AnimeDetails/MoreLikeThis.vue'
 import RenderDetails from '@/components/AnimeDetails/RenderDetails.vue'
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import AnimeList from '../components/AnimeList.vue'
 import Loader from '../components/Loader.vue'
 
 const data = ref<any>(null)
@@ -59,19 +59,22 @@ onMounted(() => {
           <img :src="data.images.jpg.image_url" :alt="data.title" />
         </div>
       </div>
-      <div class="details-container">
-        <RenderDetails :data="data" />
-        <div class="ad">
-          <AdvertisingContent />
+      <div>
+        <div class="details-container">
+          <RenderDetails :data="data" />
+          <div class="ad">
+            <AdvertisingContent />
+          </div>
+          <div class="more-like-this">
+            <MoreLikeThis :genres="data.genres" />
+          </div>
         </div>
-        <div class="more-like-this">
-          <h3>More like this</h3>
-          <div v-if="moreLikeThis.length">
-            <AnimeList :data="moreLikeThis" />
-          </div>
-          <div v-else>
-            <p>No similar anime found.</p>
-          </div>
+        <div v-if="data.trailer && data.trailer.embed_url" class="trailer-container">
+          <h2>Watch the Trailer</h2>
+          <video width="320" height="240" controls>
+            <source :src="data.trailer.embed_url" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
@@ -81,12 +84,6 @@ onMounted(() => {
 <style scoped>
 section {
   padding: 4rem;
-}
-
-h3 {
-  font-size: 2rem;
-  font-family: 'Trade Winds', system-ui;
-  margin: 2rem 0rem;
 }
 
 h1 {

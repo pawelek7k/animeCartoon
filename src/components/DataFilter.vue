@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
+import SearchInput from './DataFilter/SearchInput.vue'
 const isOpen = ref(false)
 
 const toggleMenu = () => {
@@ -37,7 +38,9 @@ onUnmounted(() => {
       </label>
     </div>
     <div class="data-filter-container" :class="{ 'is-open': isOpen }">
-      <div class="data-filter-content" :class="{ 'is-closed': !isOpen }"></div>
+      <div class="data-filter-content" :class="{ 'is-closed': !isOpen }">
+        <SearchInput />
+      </div>
     </div>
   </div>
 </template>
