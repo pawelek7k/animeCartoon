@@ -41,7 +41,7 @@ import StyledLink from './StyledLink.vue'
 <style scoped>
 footer {
   height: 30vh;
-  background: linear-gradient(0deg, rgba(142, 43, 23, 1) 0%, rgba(10, 12, 16, 1) 90%);
+  background: linear-gradient(0deg, var(--secondary) 0%, rgba(10, 12, 16, 1) 90%);
   display: flex;
   justify-content: space-around;
   padding: 2rem;
