@@ -3,11 +3,11 @@ interface Props {
   label: string
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 </script>
 
 <template>
-  <button>{{ props.label }}</button>
+  <button>{{ label }}</button>
 </template>
 
 <style scoped>

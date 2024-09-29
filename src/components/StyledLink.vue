@@ -1,13 +1,14 @@
 <script setup lang="ts">
 interface Props {
   label: string
+  href?: string
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 </script>
 
 <template>
-  <a>{{ props.label }}</a>
+  <a :href="href">{{ label }}</a>
 </template>
 
 <style scoped></style>

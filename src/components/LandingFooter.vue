@@ -1,11 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import StyledLink from './StyledLink.vue'
+</script>
 
 <template>
   <footer>
     <div>
       <h3>Navigation</h3>
       <ul>
-        <li>Home</li>
+        <li><StyledLink label="Home" /></li>
         <li>About</li>
       </ul>
     </div>
