@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useRouter } from 'vue-router'
+import 'swiper/css'
 
 const router = useRouter()
 

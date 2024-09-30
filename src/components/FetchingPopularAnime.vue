@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import axios from 'axios'
-import 'swiper/css'
 import { onMounted, ref } from 'vue'
 import AnimeList from './AnimeList.vue'
 import Loader from './Loader.vue'
