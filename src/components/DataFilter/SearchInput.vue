@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const searchQuery = ref('')
+const router = useRouter()
+</script>
 
 <template>
   <div>
