@@ -9,8 +9,21 @@ const router = useRouter()
 <template>
   <div>
     <div class="form-control">
-      <div>
-        <v-icon name="CoSearch" scale="2" width="50" height="50" fill="#fff" />
+      <div class="icon-container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#f3ebe9df"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
       </div>
       <input class="input input-alt" placeholder="Search anime!" type="text" />
       <span class="input-border input-border-alt"></span>
@@ -19,6 +32,10 @@ const router = useRouter()
 </template>
 
 <style scoped>
+.icon-container {
+  display: flex;
+  align-items: center;
+}
 .form-control {
   display: flex;
 }
@@ -31,13 +48,11 @@ const router = useRouter()
   padding-inline: 0.5em;
   padding-block: 0.7em;
   border: none;
-  border-bottom: var(--border-height) solid var(--border-before-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .input-border {
   position: absolute;
-  background: var(--border-after-color);
   width: 0%;
   height: 2px;
   bottom: 0;
