@@ -3,6 +3,7 @@
 <template>
   <div>
     <div class="form-control">
+      <v-icon name="CoSearch" scale="2" width="50" height="50" fill="#fff" />
       <input class="input input-alt" placeholder="Search anime!" type="text" />
       <span class="input-border input-border-alt"></span>
     </div>
