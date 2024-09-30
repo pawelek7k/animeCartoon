@@ -3,7 +3,9 @@
 <template>
   <div>
     <div class="form-control">
-      <v-icon name="CoSearch" scale="2" width="50" height="50" fill="#fff" />
+      <div>
+        <v-icon name="CoSearch" scale="2" width="50" height="50" fill="#fff" />
+      </div>
       <input class="input input-alt" placeholder="Search anime!" type="text" />
       <span class="input-border input-border-alt"></span>
     </div>
@@ -11,6 +13,9 @@
 </template>
 
 <style scoped>
+.form-control {
+  display: flex;
+}
 .input {
   color: #fff;
   font-size: 0.9rem;

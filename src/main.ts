@@ -1,14 +1,15 @@
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { CoSearch, FaFlag, RiZhihuFill } from "oh-vue-icons/icons";
+import { CoSearch, GiRoundStar } from "oh-vue-icons/icons";
 import { createMUI } from 'shuimo-ui';
+
 import 'shuimo-ui/dist/style.css';
 import { createApp } from 'vue';
 import App from './App.vue';
 import './assets/styles/global.css';
 import router from './router';
 
-addIcons(FaFlag, RiZhihuFill, CoSearch);
+addIcons(CoSearch, GiRoundStar);
 
 const app = createApp(App);
 
