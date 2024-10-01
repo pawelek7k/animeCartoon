@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
 import { defineProps } from 'vue'
+import { useRouter } from 'vue-router'
 
 interface Anime {
   mal_id: number
@@ -74,6 +74,7 @@ const handleSlideClick = () => {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  max-width: 250px;
   display: inline-block;
   position: relative;
   margin-right: 10px;
