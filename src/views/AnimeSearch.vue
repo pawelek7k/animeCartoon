@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AnimeList from '@/components/DataFilter/AnimeList.vue'
 import axios from 'axios'
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -44,7 +45,7 @@ watch(
       <h1>Results for "{{ searchQuery }}"</h1>
       <ul>
         <li v-if="searchResults.length === 0">No results found.</li>
-        <li v-for="anime in searchResults" :key="anime.mal_id">{{ anime.title }}</li>
+        <AnimeList v-for="anime in searchResults" :key="anime.mal_id" :data="anime" />
       </ul>
     </div>
   </main>
