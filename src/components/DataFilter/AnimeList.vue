@@ -77,6 +77,7 @@ const handleSlideClick = () => {
   max-width: 250px;
   display: inline-block;
   position: relative;
+  height: 450px;
   margin-right: 10px;
 }
 

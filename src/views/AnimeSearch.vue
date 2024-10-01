@@ -55,4 +55,12 @@ watch(
 main {
   padding: 5rem 3rem;
 }
+
+ul {
+  max-width: 1200px;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
 </style>
