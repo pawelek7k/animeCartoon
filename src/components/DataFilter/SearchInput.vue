@@ -89,4 +89,9 @@ const router = useRouter()
 .input-alt:focus + .input-border-alt {
   width: 100%;
 }
+
+.data-filter-content.is-closed .input-alt {
+  padding-inline: 0em;
+  padding-block: 0.8em 0em;
+}
 </style>

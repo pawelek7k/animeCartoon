@@ -105,6 +105,13 @@ onUnmounted(() => {
   z-index: 999;
 }
 
+.data-filter-content.is-closed {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .data-filter-content {
   height: 100%;
   width: 100%;
@@ -119,7 +126,7 @@ onUnmounted(() => {
 .data-filter-content.is-closed {
   border-radius: 2rem;
   border: thin solid var(--primary);
-  padding: 2rem;
+  padding: 2.2rem 2rem;
   overflow-y: hidden;
 }
 
