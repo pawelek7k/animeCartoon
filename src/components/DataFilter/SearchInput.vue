@@ -4,6 +4,13 @@ import { useRouter } from 'vue-router'
 
 const searchQuery = ref('')
 const router = useRouter()
+
+const searchAnime = () => {
+  console.log('Searching for:', searchQuery.value)
+  if (searchQuery.value.trim()) {
+    router.push({ name: 'SearchResults', query: { q: searchQuery.value } })
+  }
+}
 </script>
 
 <template>
@@ -25,7 +32,14 @@ const router = useRouter()
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
       </div>
-      <input class="input input-alt" placeholder="Search anime!" type="text" />
+      <input
+        class="input input-alt"
+        placeholder="Search anime!"
+        type="text"
+        v-model="searchQuery"
+        @keyup.enter="searchAnime"
+      />
+
       <span class="input-border input-border-alt"></span>
     </div>
   </div>

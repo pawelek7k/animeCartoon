@@ -11,7 +11,6 @@ const fetchNewSeasonAnime = async () => {
   loading.value = true
   try {
     const response = await axios.get('https://api.jikan.moe/v4/seasons/now')
-    console.log('New season data:', response.data.data)
     newSeasonData.value = response.data.data
   } catch (error) {
     console.error('Error fetching new season data:', error)

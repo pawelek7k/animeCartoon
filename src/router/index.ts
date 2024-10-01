@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import About from '../views/About.vue';
 import AnimeDetails from '../views/AnimeDetails.vue';
+import AnimeSearch from '../views/AnimeSearch.vue';
 import Home from '../views/Home.vue';
 
 const routes = [
@@ -18,7 +19,13 @@ const routes = [
         path: '/anime/:id',
         name: 'Anime Details',
         component: AnimeDetails
+    },
+    {
+        path: '/search',
+        name: 'SearchResults',
+        component: AnimeSearch
     }
+
 ];
 
 const router = createRouter({
