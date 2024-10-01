@@ -61,6 +61,13 @@ ul {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  align-items: center;
   margin: 0 auto;
+}
+
+@media (max-width: 650px) {
+  ul {
+    justify-content: center;
+  }
 }
 </style>
