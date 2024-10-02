@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { onMounted, ref, watch } from 'vue'
-import AnimeList from '../AnimeList.vue'
+import SliderList from '../SliderList.vue'
 
 interface Genre {
   mal_id: number
@@ -45,7 +45,7 @@ onMounted(() => {
       <p>You want to see something similar?</p>
     </div>
     <div v-if="moreLikeThis.length">
-      <AnimeList :data="moreLikeThis" />
+      <SliderList :data="moreLikeThis" />
     </div>
     <div v-else>
       <p>No similar anime found.</p>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
-import AnimeList from './AnimeList.vue'
 import Loader from './Loader.vue'
+import SliderList from './SliderList.vue'
 
 const newSeasonData = ref<any>(null)
 const loading = ref(true)
@@ -33,7 +33,7 @@ onMounted(() => {
       <p>Start your binge before the new season begins!</p>
     </div>
     <div v-if="loading"><Loader /></div>
-    <AnimeList v-else :data="newSeasonData" />
+    <SliderList v-else :data="newSeasonData" />
   </section>
 </template>
 <style scoped>

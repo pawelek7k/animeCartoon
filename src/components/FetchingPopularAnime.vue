@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
-import AnimeList from './AnimeList.vue'
 import Loader from './Loader.vue'
+import SliderList from './SliderList.vue'
 
 const data = ref<any>(null)
 const loading = ref(true)
@@ -35,7 +35,7 @@ onMounted(() => {
     </div>
     <div v-if="loading"><Loader /></div>
     <div>
-      <AnimeList :data="data" />
+      <SliderList :data="data" />
     </div>
     <div class="line-container second-line">
       <hr />

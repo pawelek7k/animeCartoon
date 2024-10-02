@@ -45,7 +45,9 @@ watch(
       <h1>Results for "{{ searchQuery }}"</h1>
       <ul>
         <li v-if="searchResults.length === 0">No results found.</li>
-        <AnimeList v-for="anime in searchResults" :key="anime.mal_id" :data="anime" />
+        <li v-for="anime in searchResults" :key="anime.mal_id">
+          <AnimeList :data="anime" />
+        </li>
       </ul>
     </div>
   </main>
@@ -62,6 +64,7 @@ ul {
   gap: 2rem;
   flex-wrap: wrap;
   align-items: center;
+  list-style: none;
   margin: 0 auto;
 }
 

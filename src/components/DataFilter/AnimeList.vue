@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import { useRouter } from 'vue-router'
 
 interface Anime {
   mal_id: number
@@ -18,16 +17,10 @@ interface Anime {
 const props = defineProps<{
   data: Anime
 }>()
-
-const router = useRouter()
-
-const handleSlideClick = () => {
-  router.push(`/anime/${props.data.mal_id}`)
-}
 </script>
 
 <template>
-  <li @click="handleSlideClick" class="anime-item">
+  <div class="anime-item">
     <div class="anime-slide-content">
       <img :src="data.images.jpg.large_image_url" :alt="data.title" class="anime-image" />
       <div class="anime-info">
@@ -59,7 +52,7 @@ const handleSlideClick = () => {
       </span>
       {{ data.score !== null ? data.score : '?' }}
     </p>
-  </li>
+  </div>
 </template>
 
 <style scoped>
@@ -79,6 +72,7 @@ const handleSlideClick = () => {
   position: relative;
   height: 450px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .anime-item > p {
@@ -139,6 +133,7 @@ const handleSlideClick = () => {
   border-top: thin solid var(--accent);
   padding: 10px;
   font-size: 14px;
+  cursor: pointer;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
