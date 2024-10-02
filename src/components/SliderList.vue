@@ -38,10 +38,13 @@ const handleSlideClick = (id: number) => {
     }"
     :space-between="20"
     :breakpoints="{
+      320: { slidesPerView: 1, spaceBetween: 10 },
+      480: { slidesPerView: 1, spaceBetween: 20 },
       640: { slidesPerView: 2, spaceBetween: 30 },
       768: { slidesPerView: 3, spaceBetween: 40 },
       1024: { slidesPerView: 4, spaceBetween: 40 },
-      1250: { slidesPerView: 5, spaceBetween: 40 }
+      1350: { slidesPerView: 4, spaceBetween: 40 },
+      1550: { slidesPerView: 5, spaceBetween: 40 }
     }"
     @swiper="onSwiper"
     @slideChange="onSlideChange"

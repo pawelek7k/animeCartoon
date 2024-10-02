@@ -145,4 +145,16 @@ const props = defineProps<{
 .anime-slide-content:hover .anime-image {
   transform: scale(1.05);
 }
+
+@media (max-width: 1024px) {
+  .anime-item {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .anime-item {
+    max-width: 100%;
+  }
+}
 </style>
