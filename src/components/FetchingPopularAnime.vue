@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
-import Loader from './Loader.vue'
+import Loader from './LoaderSpinner.vue'
 import SliderList from './SliderList.vue'
 
 const data = ref<any>(null)

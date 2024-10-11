@@ -5,7 +5,7 @@ import RenderDetails from '@/components/AnimeDetails/RenderDetails.vue'
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import Loader from '../components/Loader.vue'
+import Loader from '../components/LoaderSpinner.vue'
 
 const data = ref<any>(null)
 const loading = ref(true)
