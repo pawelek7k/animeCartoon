@@ -1,23 +1,11 @@
 <script setup lang="ts">
+import type { Anime } from '@/types/Anime'
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useRouter } from 'vue-router'
 import AnimeList from '../DataFilter/AnimeList.vue'
 
 const router = useRouter()
-
-interface Anime {
-  mal_id: number
-  title: string
-  episodes: number
-  score: number
-  images: {
-    jpg: {
-      large_image_url: string
-    }
-  }
-  genres: { mal_id: number; name: string }[]
-}
 
 const { data } = defineProps<{
   data: Anime[]

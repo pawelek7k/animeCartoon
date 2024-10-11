@@ -1,18 +1,6 @@
 <script setup lang="ts">
+import type { Anime } from '@/types/Anime'
 import { defineProps } from 'vue'
-
-interface Anime {
-  mal_id: number
-  title: string
-  episodes: number
-  score: number
-  images: {
-    jpg: {
-      large_image_url: string
-    }
-  }
-  genres: { mal_id: number; name: string }[]
-}
 
 const props = defineProps<{
   data: Anime

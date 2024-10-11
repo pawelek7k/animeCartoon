@@ -1,20 +1,10 @@
 <script setup lang="ts">
+import type { Anime } from '@/types/Anime'
 import { ref } from 'vue'
 import PrimaryButton from '../Global/PrimaryButton.vue'
 import SecondaryButton from '../Global/SecondaryButton.vue'
 
-interface DataProps {
-  rating: string
-  title: string
-  score: number
-  episodes: number
-  genres: Array<{ name: string }>
-  synopsis: string
-  studios: Array<{ name: string }>
-  producers: Array<{ name: string }>
-}
-
-const props = defineProps<{ data: DataProps }>()
+const props = defineProps<{ data: Anime }>()
 
 const showFullSynopsis = ref(false)
 
