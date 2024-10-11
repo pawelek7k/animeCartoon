@@ -58,6 +58,11 @@ main {
   padding: 5rem 3rem;
 }
 
+h1 {
+  margin: 0rem 0rem 2rem 4rem;
+  font-family: 'Trade Winds', system-ui;
+}
+
 ul {
   max-width: 1200px;
   display: flex;
