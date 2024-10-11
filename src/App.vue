@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import DataFilter from './components/DataFilter.vue'
-import LandingFooter from './components/LandingFooter.vue'
-import MainNavigation from './components/MainNavigation.vue'
+import LandingFooter from './components/Global/LandingFooter.vue'
+import DataFilter from './components/Navigation/DataFilter.vue'
+import MainNavigation from './components/Navigation/MainNavigation.vue'
 </script>
 
 <template>

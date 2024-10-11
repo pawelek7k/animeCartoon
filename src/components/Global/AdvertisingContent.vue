@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PrimaryButton from './PrimaryButton.vue'
+import PrimaryButton from '../Global/PrimaryButton.vue'
 </script>
 
 <template>

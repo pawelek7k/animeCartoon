@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import StyledLink from './StyledLink.vue'
+import StyledLink from '../Global/StyledLink.vue'
 </script>
 
 <template>

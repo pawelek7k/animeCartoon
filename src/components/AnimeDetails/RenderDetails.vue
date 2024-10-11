@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import PrimaryButton from '../PrimaryButton.vue'
-import SecondaryButton from '../SecondaryButton.vue'
+import PrimaryButton from '../Global/PrimaryButton.vue'
+import SecondaryButton from '../Global/SecondaryButton.vue'
 
 interface DataProps {
   rating: string

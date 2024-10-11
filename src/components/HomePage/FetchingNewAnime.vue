@@ -1,48 +1,41 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
-import Loader from './LoaderSpinner.vue'
-import SliderList from './SliderList.vue'
+import Loader from '../Global/LoaderSpinner.vue'
+import SliderList from '../Global/SliderList.vue'
 
-const data = ref<any>(null)
+const newSeasonData = ref<any>(null)
 const loading = ref(true)
 
-const fetchData = async () => {
+const fetchNewSeasonAnime = async () => {
   loading.value = true
   try {
-    const response = await axios.get('https://api.jikan.moe/v4/top/anime')
-    data.value = response.data.data
+    const response = await axios.get('https://api.jikan.moe/v4/seasons/now')
+    newSeasonData.value = response.data.data
   } catch (error) {
-    console.error('Error fetching data:', error)
+    console.error('Error fetching new season data:', error)
   } finally {
     loading.value = false
   }
 }
 
 onMounted(() => {
-  fetchData()
+  fetchNewSeasonAnime()
 })
 </script>
-
 <template>
   <section>
     <div class="line-container">
       <hr />
     </div>
     <div class="text-container">
-      <h2 class="heading-section">The most popular anime:</h2>
-      <p>Maybe we can watch it again?</p>
+      <h2 class="heading-section">New anime seasons:</h2>
+      <p>Start your binge before the new season begins!</p>
     </div>
     <div v-if="loading"><Loader /></div>
-    <div>
-      <SliderList :data="data" />
-    </div>
-    <div class="line-container second-line">
-      <hr />
-    </div>
+    <SliderList v-else :data="newSeasonData" />
   </section>
 </template>
-
 <style scoped>
 section {
   padding: 2rem 4rem;
@@ -65,15 +58,7 @@ section {
 
 hr {
   border: thin solid var(--secondary);
-  width: 50%;
-}
-
-.second-line {
-  margin-top: 2rem;
-}
-
-.second-line hr {
-  width: 40%;
+  width: 30%;
 }
 
 .line-container {
@@ -81,11 +66,5 @@ hr {
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-}
-
-@media (max-width: 800px) {
-  .second-line {
-    display: none;
-  }
 }
 </style>

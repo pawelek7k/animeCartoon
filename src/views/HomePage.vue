@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import FirstAnimeCover from '@/components/FirstAnimeCover.vue'
-import FetchingNewAnime from '../components/FetchingNewAnime.vue'
-import FetchingPopularAnime from '../components/FetchingPopularAnime.vue'
-import LandingHero from '../components/LandingHero.vue'
+import FirstAnimeCover from '@/components/HomePage/FirstAnimeCover.vue'
+import FetchingNewAnime from '../components/HomePage/FetchingNewAnime.vue'
+import FetchingPopularAnime from '../components/HomePage/FetchingPopularAnime.vue'
+import LandingHero from '../components/HomePage/LandingHero.vue'
 </script>
 
 <template>

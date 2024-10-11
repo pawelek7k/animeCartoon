@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import AdvertisingContent from '@/components/AdvertisingContent.vue'
 import MoreLikeThis from '@/components/AnimeDetails/MoreLikeThis.vue'
 import RenderDetails from '@/components/AnimeDetails/RenderDetails.vue'
+import AdvertisingContent from '@/components/Global/AdvertisingContent.vue'
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import Loader from '../components/LoaderSpinner.vue'
+import Loader from '../components/Global/LoaderSpinner.vue'
 
 const data = ref<any>(null)
 const loading = ref(true)

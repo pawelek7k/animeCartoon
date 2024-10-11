@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { onMounted, ref, watch } from 'vue'
-import SliderList from '../SliderList.vue'
+import SliderList from '../Global/SliderList.vue'
 
 interface Genre {
   mal_id: number

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import SearchInput from './DataFilter/SearchInput.vue'
+import SearchInput from '../DataFilter/SearchInput.vue'
 const isOpen = ref(false)
 
 const toggleMenu = () => {
