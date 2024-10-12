@@ -140,4 +140,11 @@ onUnmounted(() => {
   width: 40%;
   transform: translateX(0);
 }
+
+@media (max-width: 800px) {
+  .data-filter-container.is-open {
+    width: 100%;
+    transform: translateX(0);
+  }
+}
 </style>
