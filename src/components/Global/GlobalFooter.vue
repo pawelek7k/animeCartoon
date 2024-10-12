@@ -41,7 +41,7 @@ import StyledLink from '../Global/StyledLink.vue'
 <style scoped>
 footer {
   height: 30vh;
-  background: linear-gradient(0deg, var(--secondary) 0%, rgba(10, 12, 16, 1) 90%);
+  background: linear-gradient(0deg, var(--secondary) 0%, rgba(10, 12, 16, 1) 70%);
   display: flex;
   justify-content: space-around;
   padding: 2rem;
@@ -49,7 +49,10 @@ footer {
 
 h3 {
   font-family: 'Trade Winds', system-ui;
-  color: var(--secondary);
+  font-size: 1.5rem;
+  background: -webkit-linear-gradient(var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 ul {
@@ -60,7 +63,7 @@ ul {
   gap: 0.3rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   footer {
     height: 100%;
     gap: 2rem;
