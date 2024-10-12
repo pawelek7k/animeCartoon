@@ -142,9 +142,21 @@ onUnmounted(() => {
 }
 
 @media (max-width: 800px) {
+  .data-filter-content.is-closed {
+    border-radius: 0rem;
+    border: none;
+    padding: 0rem;
+    overflow-y: hidden;
+  }
+  .data-filter-container {
+    width: 0;
+    overflow: hidden;
+  }
+
   .data-filter-container.is-open {
     width: 100%;
     transform: translateX(0);
+    border: none;
   }
 }
 </style>
