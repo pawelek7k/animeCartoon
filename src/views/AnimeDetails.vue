@@ -41,6 +41,7 @@ const fetchMoreLikeThis = async (genres: any[]) => {
 
 onMounted(() => {
   fetchData()
+  window.scrollTo(0, 0)
 })
 </script>
 
@@ -77,6 +78,7 @@ onMounted(() => {
 <style scoped>
 section {
   padding: 4rem;
+  min-height: 100vh;
 }
 
 h1 {
