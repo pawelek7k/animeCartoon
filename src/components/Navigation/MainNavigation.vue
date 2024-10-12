@@ -1,7 +1,12 @@
+<script setup lang="ts">
+import LogoAnimeCartoon from '../Global/LogoAnimeCartoon.vue'
+</script>
+
 <template>
   <div>
     <header>
       <nav>
+        <LogoAnimeCartoon />
         <ul>
           <li><router-link to="/" class="nav-link">Home</router-link></li>
           <li><router-link to="/about" class="nav-link">About</router-link></li>
@@ -21,11 +26,14 @@ nav {
   z-index: 999;
   width: 100%;
   backdrop-filter: blur(5px);
+  background-color: #0a0c10af;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 ul {
   display: flex;
-  justify-content: flex-end;
   gap: 2rem;
   padding: 0rem 3rem;
 }
