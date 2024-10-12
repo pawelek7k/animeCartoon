@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LogoAnimeCartoon from '../Global/LogoAnimeCartoon.vue'
+</script>
 
 <template>
   <section>
-    <h1>Welcome in AnimeCartoon!</h1>
+    <h1>Welcome in <LogoAnimeCartoon />!</h1>
     <img src="../../../public/images/headerImage.gif" alt="" />
   </section>
 </template>
@@ -25,7 +27,10 @@ img {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: 'Trade Winds', system-ui;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 </style>
