@@ -40,7 +40,7 @@ import StyledLink from '../Global/StyledLink.vue'
 
 <style scoped>
 footer {
-  height: 30vh;
+  min-height: 30vh;
   background: linear-gradient(0deg, var(--secondary) 0%, rgba(10, 12, 16, 1) 70%);
   display: flex;
   justify-content: space-around;
@@ -65,9 +65,28 @@ ul {
 
 @media (max-width: 750px) {
   footer {
-    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    padding: 1rem;
+  }
+
+  div {
+    justify-items: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  footer {
+    display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  div {
+    width: 100%;
+    text-align: center;
   }
 }
 </style>
