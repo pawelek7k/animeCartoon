@@ -17,7 +17,7 @@ a {
   display: inline-block;
   transition: transform 0.3s ease-in-out;
   text-decoration: none;
-  color: var(--primary);
+  color: var(--text-accent);
   letter-spacing: 1px;
 }
 
