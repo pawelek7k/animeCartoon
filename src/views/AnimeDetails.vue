@@ -69,13 +69,6 @@ onMounted(() => {
             <MoreLikeThis :genres="data.genres" />
           </div>
         </div>
-        <div v-if="data.trailer && data.trailer.embed_url" class="trailer-container">
-          <h2>Watch the Trailer</h2>
-          <video width="320" height="240" controls>
-            <source :src="data.trailer.embed_url" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
       </div>
     </div>
   </section>
