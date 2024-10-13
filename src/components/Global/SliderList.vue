@@ -3,7 +3,7 @@ import type { Anime } from '@/types/Anime'
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useRouter } from 'vue-router'
-import AnimeList from '../DataFilter/AnimeList.vue'
+import AnimeList from './AnimeList.vue'
 
 const router = useRouter()
 

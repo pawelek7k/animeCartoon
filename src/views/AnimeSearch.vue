@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AnimeList from '@/components/DataFilter/AnimeList.vue'
+import AnimeList from '@/components/Global/AnimeList.vue'
 import axios from 'axios'
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'

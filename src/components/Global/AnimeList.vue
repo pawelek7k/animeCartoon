@@ -101,6 +101,7 @@ const props = defineProps<{
 
 .anime-heading {
   font-size: 0.9rem;
+  max-width: 250px;
 }
 
 .anime-slide-content {
