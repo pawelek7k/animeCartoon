@@ -1,13 +1,14 @@
 <script setup lang="ts">
 interface Props {
   label: string
+  onClick?: () => void
 }
 
 defineProps<Props>()
 </script>
 
 <template>
-  <button>{{ label }}</button>
+  <button @click="onClick">{{ label }}</button>
 </template>
 
 <style scoped>

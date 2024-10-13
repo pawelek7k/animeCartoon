@@ -1,9 +1,29 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import PrimaryButton from './PrimaryButton.vue'
+
+const isModalVisible = ref(false)
+
+const closeModalAndSetCookie = () => {
+  document.cookie = 'privacyPolicyAccepted=true; path=/; max-age=31536000'
+  isModalVisible.value = false
+}
+
+const checkCookie = () => {
+  return document.cookie
+    .split(';')
+    .some((cookie) => cookie.trim().startsWith('privacyPolicyAccepted='))
+}
+
+onMounted(() => {
+  if (!checkCookie()) {
+    isModalVisible.value = true
+  }
+})
 </script>
 
 <template>
-  <div class="overlay">
+  <div class="overlay" v-if="isModalVisible">
     <div class="container">
       <div><h2>Privacy Policy</h2></div>
       <div>
@@ -12,7 +32,7 @@ import PrimaryButton from './PrimaryButton.vue'
           with applicable data protection regulations.
         </p>
       </div>
-      <PrimaryButton label="I understand" />
+      <PrimaryButton label="I understand" @click="closeModalAndSetCookie" />
     </div>
   </div>
 </template>
