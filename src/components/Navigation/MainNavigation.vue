@@ -36,6 +36,7 @@ ul {
   display: flex;
   gap: 2rem;
   padding: 0rem 3rem;
+  list-style: none;
 }
 
 .nav-link {
