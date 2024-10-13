@@ -6,11 +6,12 @@
   --primary: #e3a294;
   --secondary: #8e2b17;
   --accent: #f15e3f;
+  --primary-bg: #0a0c10;
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background-color: #0a0c10;
+  background-color: var(--primary-bg);
   color: var(--text);
   margin: 0;
   padding: 0;
