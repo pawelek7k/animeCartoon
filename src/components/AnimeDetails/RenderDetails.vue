@@ -68,6 +68,7 @@ const toggleSynopsis = () => {
   position: absolute;
   overflow: visible;
   cursor: pointer;
+  text-shadow: 2px 2px 5px var(--text-accent);
   animation: buttonAnimation 2s infinite ease-in-out;
 }
 
