@@ -68,6 +68,19 @@ const toggleSynopsis = () => {
   position: absolute;
   overflow: visible;
   cursor: pointer;
+  animation: buttonAnimation 2s infinite ease-in-out;
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .btns-details ul {
